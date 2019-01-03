@@ -22,20 +22,20 @@ class HomeFillter extends Component {
     }
 
     onProvinceChange = (e) => {
+
         this.setState({
             province: e.value,
             district: -1
         })
-        this.props.onProvince(e.value);
+
+        this.props.getDistrict(e.value);
     }
     
     onDistrictChange = (e) => {
-        
         this.setState({
             district: e.value
         })
 
-        this.props.onDistrict(e.value);
     }
 
     resetFillter = () => {
@@ -46,10 +46,7 @@ class HomeFillter extends Component {
     }
 
     componentDidMount(){
-        this.props.getDistrict();
         this.props.getProvince();
-        
-
         // let {selected} = this.props;
         // if(!isEmpty(selected.province)){
         //     if(isEmpty(selected.district)){
@@ -218,7 +215,6 @@ const mapDispatchToProps = (dispatch, props) => {
         getMotel: () => dispatch(MotelAction.getMotelRequest()),
         getProvinceSelected: (id) => dispatch(ProvinceAction.getProvinceSelectedRequest(id)),
         getDistrictSelected: (id) => dispatch(DistrictAction.getDistrictSelectedRequest(id)),
-        getItemMotel: (id) => dispatch(MotelAction.getMotelItemRequest(id))
     }
 }
 

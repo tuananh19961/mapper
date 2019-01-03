@@ -70,14 +70,13 @@ class HomePage extends Component {
                     );
             }
         } else 
-
             return (
                 <div className="home_wrapper" id="style-1">
                     <div className="row">
 
                         <div className="col-sm-7">
                             <div className="home_map">
-                                <HomeMap/>
+                                <HomeMap />
                             </div>
                         </div>
 
@@ -88,7 +87,6 @@ class HomePage extends Component {
                                         <Route path="/" exact component={() => <HomeFillter />}/>
 
                                         <Route path="/view/:id/:slug.html" component= { () => <Preview /> }/>
-
                                     </Switch>
                                 </Router>
 

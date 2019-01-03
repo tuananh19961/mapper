@@ -174,6 +174,7 @@ const getMotelItem = (isSuccess, data) => {
 }
 
 const getMotelItemRequest = (id) => async dispatch => {
+    dispatch(motelRequest());
     try {
         const result = await getDataByID('/api/motels',id);
         if (result) {
@@ -204,9 +205,17 @@ const onMouseOutItem = () => {
     }
 } 
 
+const resetMotelData = () => {
+
+    return {
+        type: types.RESET_MOTEL_DATA
+    }
+}
+
 export const MotelAction = {
     getMotelRequest,
     onHoverItem,
     onMouseOutItem,
-    getMotelItemRequest
+    getMotelItemRequest,
+    resetMotelData
 }

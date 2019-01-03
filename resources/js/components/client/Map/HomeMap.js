@@ -1,15 +1,24 @@
 import React, {Component} from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper, Polyline} from 'google-maps-react';
 import Geocode from "react-geocode";
-import {isEmpty, findIndex} from 'lodash';
-import { ProvinceAction, DistrictAction, MotelAction} from './../../../actions/index';
-import { connect } from 'react-redux';
+import {to_slug} from './../../../services/base-service';
+import {MotelAction} from './../../../actions/index';
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
 const icon = {
     url: 'https://img.icons8.com/ultraviolet/1600/marker.png',
     scaledSize: {
-        width: 30,
-        height: 30
+        width: 35,
+        height: 35
+    }
+};
+
+const icon2 = {
+    url: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png',
+    scaledSize: {
+        width: 25,
+        height: 25
     }
 };
 
@@ -25,22 +34,29 @@ class HomeMap extends Component {
                 lng: 108.218105
             },
             zoom: 12
-            ,
-            
         }
     }
 
     componentDidMount() {
         Geocode.setApiKey("AIzaSyAiQX1yfcvHCeM98e6asi-Wi-Y_H4-V1Qw");
-        this.props.getMotel();
+        this
+            .props
+            .getMotel();
     }
 
     onMouseover = (props, marker, e) => {
-        marker.setAnimation(1)
+        marker.setIcon(icon);
     }
 
     onMouseout = (props, marker, e) => {
-        marker.setAnimation(0)
+        marker.setIcon(icon2);
+    }
+
+    onSelectItem = (item) => {
+        this
+            .props
+            .history
+            .push(`/view/${item.id}/${to_slug(item.title)}.html`);
     }
 
     render() {
@@ -67,11 +83,14 @@ class HomeMap extends Component {
                     .map((item, index) => {
                         return (<Marker
                             index={index}
-                            icon={icon}
-                            animation={item.id === Motel.item_hover.id ? 1 : 0}
+                            icon={item.id === Motel.item_hover.id
+                            ? icon
+                            : icon2}
                             onMouseover={this.onMouseover}
                             onMouseout={this.onMouseout}
-                            title={'The marker`s title will appear as a tooltip.'}
+                            onClick=
+                            {() => this.onSelectItem(item)}
+                            title={item.title}
                             position={{
                             lat: item.latitude,
                             lng: item.longitude
@@ -91,13 +110,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        getProvince: () => dispatch(ProvinceAction.getProvinceRequest()),
-        getDistrict: (id) => dispatch(DistrictAction.getDistrictRequest(id)),
-        getMotel: () => dispatch(MotelAction.getMotelRequest()),
-        getProvinceSelected: (id) => dispatch(ProvinceAction.getProvinceSelectedRequest(id)),
-        getDistrictSelected: (id) => dispatch(DistrictAction.getDistrictSelectedRequest(id)),
-        getItemMotel: (id) => dispatch(MotelAction.getMotelItemRequest(id))
+        getMotel: () => dispatch(MotelAction.getMotelRequest())
     }
 }
 
-export default GoogleApiWrapper({apiKey: ('AIzaSyAiQX1yfcvHCeM98e6asi-Wi-Y_H4-V1Qw')})(connect(mapStateToProps,mapDispatchToProps)(HomeMap));
+export default withRouter(GoogleApiWrapper({apiKey: ('AIzaSyAiQX1yfcvHCeM98e6asi-Wi-Y_H4-V1Qw')})(connect(mapStateToProps, mapDispatchToProps)(HomeMap)));

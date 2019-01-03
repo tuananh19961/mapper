@@ -9,19 +9,30 @@ import { connect } from 'react-redux';
 import {MotelAction} from './../../../actions/index';
 
 class Preview extends Component {
+    isMount = false;
 
     componentDidMount(){
+        this.isMount = true;
         window.scrollTo(0, 0);
         if(this.props.match.params.id){
             this.props.getItemData(this.props.match.params.id)
         }
     }
 
+    componentDidUpdate(next){
+        console.log(next.match.params);
+    }
+
+    
+
+    componentWillUnmount(){
+        this.isMount = false;
+    }
+    
     render() {
         const {Motel} = this.props;
-        
 
-        if(isEmpty(Motel.item_selected) ){
+        if(Motel.isRequest){
             return(
             <div className="text-center">
                 <i className="fa fa-spinner fa-pulse fa-3x fa-fw mt-20"></i>
@@ -29,7 +40,16 @@ class Preview extends Component {
             </div>
             )
         }
-        else
+
+        if(isEmpty(Motel.item_selected)){
+            return(
+            <div className="text-center">
+                <i className="fa fa-spinner fa-pulse fa-3x fa-fw mt-20"></i>
+                <span className="sr-only">Loading...</span>
+            </div>
+            )
+        }
+
         return (
             <div className="preview">
                 <div className="preview_top">
@@ -38,7 +58,11 @@ class Preview extends Component {
                             type="button"
                             className="btn btn-outline btn-reset"
                             onClick=
-                            { () => { this.props.history.goBack(); } }>
+                            { () => { 
+                                this.props.history.push('/'); 
+                                this.props.resetMotelData();
+                            }
+                            }>
                             <i className="fa fa-arrow-left"></i>
                             Trở về trang danh sách
                         </button>
@@ -69,14 +93,12 @@ class Preview extends Component {
                     <div className="preview_image">
                     
                         <Carousel showThumbs={false} transitionTime={500}>
-                                    {   !isEmpty(Motel.item_selected.details) ?
-                                        Motel.item_selected.details.map((i, index) => {
+                                    { 
+                                        this.isMount && Motel.item_selected.details.map((i, index) => {
                                         return <div key={index} className="item-preview">
                                             <img src={`/upload/motel/${i.image}`}/>
                                         </div>
                                         })
-                                        : 
-                                        ''
                                     }
                         </Carousel>
                         
@@ -90,7 +112,6 @@ class Preview extends Component {
                                     <h2>
                                         <a href="#">{Motel.item_selected.title}</a>
                                     </h2>
-                                    {console.log()}
                                     <p>{`${Motel.item_selected.address}, ${Motel.item_selected.districts._name}, ${Motel.item_selected.provinces._name}`}</p>
                                 </div>
                             </div>
@@ -157,7 +178,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch,props) => {
     return {
-        getItemData : (id) => dispatch(MotelAction.getMotelItemRequest(id))
+        getItemData : (id) => dispatch(MotelAction.getMotelItemRequest(id)),
+        resetMotelData: () => dispatch(MotelAction.resetMotelData())
     }
 }
 

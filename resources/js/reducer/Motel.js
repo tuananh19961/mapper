@@ -67,6 +67,13 @@ const Motel = (state = initialState, action) => {
                 ...state,
                 item_hover: {}
             }
+
+        case types.RESET_MOTEL_DATA:
+            state.item_selected = {};
+            return{
+            ...state
+            };
+
         default:
             return {
                 ...state
