@@ -28,7 +28,6 @@ class Home extends Component {
                 <section className="new_arrivals_area section-padding-80 clearfix">
                     <HomePage View={view}/>
                 </section>
-               
             </div>
         );
     }

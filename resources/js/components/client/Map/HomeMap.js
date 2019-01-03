@@ -53,10 +53,7 @@ class HomeMap extends Component {
     }
 
     onSelectItem = (item) => {
-        this
-            .props
-            .history
-            .push(`/view/${item.id}/${to_slug(item.title)}.html`);
+            this.props.history.push(`/view/${item.id}/${to_slug(item.title)}.html`)
     }
 
     render() {
@@ -68,24 +65,22 @@ class HomeMap extends Component {
                 className="map"
                 id="onMap"
                 initialCenter={{
-                lat: 16.036500,
-                lng: 108.218105
-            }}
+                         
+                }}
                 center={{
-                lat: this.state.center.lat,
-                lng: this.state.center.lng
-            }}
+                    lat: this.state.center.lat,
+                    lng: this.state.center.lng
+                }}
                 zoom={this.state.zoom}>
 
                 {/* List all location  */}
                 {Motel
                     .data
                     .map((item, index) => {
-                        return (<Marker
+                        return (
+                        <Marker
                             index={index}
-                            icon={item.id === Motel.item_hover.id
-                            ? icon
-                            : icon2}
+                            icon={item.id === Motel.item_hover.id? icon: icon2}
                             onMouseover={this.onMouseover}
                             onMouseout={this.onMouseout}
                             onClick=
@@ -97,8 +92,7 @@ class HomeMap extends Component {
                         }}
                             key={index}/>)
                     })
-}
-
+            }
             </Map>
         );
     }

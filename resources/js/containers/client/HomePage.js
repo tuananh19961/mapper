@@ -3,7 +3,7 @@ import HomeMap from './../../components/client/Map/HomeMap';
 import HomeFillter from './../../components/client/Fillter/HomeFillter';
 import Preview from './Home/Preview';
 import * as constant from './../../constants/Config';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {Route, Link} from "react-router-dom";
 
 class HomePage extends Component {
     constructor() {
@@ -45,12 +45,8 @@ class HomePage extends Component {
                             <div className="row">
                                 <div className="col-sm-12">
                                     <div className="home_fillter">
-                                        <Router>
-                                            <Switch>
-                                                <Route path="/" exact component={() => <HomeFillter/>}/>
-                                                <Route path="/view/:id/:slug.html" component= { () => <Preview /> }/>
-                                            </Switch>
-                                        </Router>
+                                                <Route path="/" exact component={HomeFillter}/>
+                                                <Route path="/view/:id/:slug.html" component= { Preview }/>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +65,8 @@ class HomePage extends Component {
                         </div>
                     );
             }
-        } else 
+        } 
+        else 
             return (
                 <div className="home_wrapper" id="style-1">
                     <div className="row">
@@ -77,19 +74,14 @@ class HomePage extends Component {
                         <div className="col-sm-7">
                             <div className="home_map">
                                 <HomeMap />
+                                <h1><Link to='/view/1/phong-tro-moi-xay-co-gac-lung-23m2-hoa-xuan-hai-chau.html'>abc</Link></h1>
                             </div>
                         </div>
 
                         <div className="col-sm-5">
                             <div className="home_fillter">
-                                <Router>
-                                    <Switch>
-                                        <Route path="/" exact component={() => <HomeFillter />}/>
-
-                                        <Route path="/view/:id/:slug.html" component= { () => <Preview /> }/>
-                                    </Switch>
-                                </Router>
-
+                                        <Route path="/" exact component={ HomeFillter }/>
+                                        <Route path="/view/:id/:slug.html" component = { Preview }/>
                             </div>
                         </div>
 

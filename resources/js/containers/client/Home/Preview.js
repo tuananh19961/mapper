@@ -19,11 +19,11 @@ class Preview extends Component {
         }
     }
 
-    componentDidUpdate(next){
-        console.log(next.match.params);
+    componentWillReceiveProps(next){
+        if(next.match.params.id !== this.props.match.params.id){
+            this.props.getItemData(next.match.params.id);
+        }
     }
-
-    
 
     componentWillUnmount(){
         this.isMount = false;
@@ -31,7 +31,6 @@ class Preview extends Component {
     
     render() {
         const {Motel} = this.props;
-
         if(Motel.isRequest){
             return(
             <div className="text-center">
@@ -184,4 +183,4 @@ const mapDispatchToProps = (dispatch,props) => {
 }
 
 
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Preview));
+export default connect(mapStateToProps,mapDispatchToProps)(Preview);

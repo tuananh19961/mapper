@@ -51111,20 +51111,8 @@ var HomePage = function (_Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'home_fillter' },
-                                        _react2.default.createElement(
-                                            _reactRouterDom.BrowserRouter,
-                                            null,
-                                            _react2.default.createElement(
-                                                _reactRouterDom.Switch,
-                                                null,
-                                                _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: function component() {
-                                                        return _react2.default.createElement(_HomeFillter2.default, null);
-                                                    } }),
-                                                _react2.default.createElement(_reactRouterDom.Route, { path: '/view/:id/:slug.html', component: function component() {
-                                                        return _react2.default.createElement(_Preview2.default, null);
-                                                    } })
-                                            )
-                                        )
+                                        _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _HomeFillter2.default }),
+                                        _react2.default.createElement(_reactRouterDom.Route, { path: '/view/:id/:slug.html', component: _Preview2.default })
                                     )
                                 )
                             )
@@ -51160,7 +51148,16 @@ var HomePage = function (_Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'home_map' },
-                            _react2.default.createElement(_HomeMap2.default, null)
+                            _react2.default.createElement(_HomeMap2.default, null),
+                            _react2.default.createElement(
+                                'h1',
+                                null,
+                                _react2.default.createElement(
+                                    _reactRouterDom.Link,
+                                    { to: '/view/1/phong-tro-moi-xay-co-gac-lung-23m2-hoa-xuan-hai-chau.html' },
+                                    'abc'
+                                )
+                            )
                         )
                     ),
                     _react2.default.createElement(
@@ -51169,20 +51166,8 @@ var HomePage = function (_Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'home_fillter' },
-                            _react2.default.createElement(
-                                _reactRouterDom.BrowserRouter,
-                                null,
-                                _react2.default.createElement(
-                                    _reactRouterDom.Switch,
-                                    null,
-                                    _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: function component() {
-                                            return _react2.default.createElement(_HomeFillter2.default, null);
-                                        } }),
-                                    _react2.default.createElement(_reactRouterDom.Route, { path: '/view/:id/:slug.html', component: function component() {
-                                            return _react2.default.createElement(_Preview2.default, null);
-                                        } })
-                                )
-                            )
+                            _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _HomeFillter2.default }),
+                            _react2.default.createElement(_reactRouterDom.Route, { path: '/view/:id/:slug.html', component: _Preview2.default })
                         )
                     )
                 )
@@ -51301,10 +51286,7 @@ var HomeMap = function (_Component) {
                     google: this.props.google,
                     className: 'map',
                     id: 'onMap',
-                    initialCenter: {
-                        lat: 16.036500,
-                        lng: 108.218105
-                    },
+                    initialCenter: {},
                     center: {
                         lat: this.state.center.lat,
                         lng: this.state.center.lng
@@ -58828,33 +58810,34 @@ var HomeFillter = function (_Component) {
 
         _this.onProvinceChange = function (e) {
 
-            _this.setState({
-                province: e.value,
-                district: -1
-            });
+            _this.setState({ province: e.value, district: -1 });
 
             _this.props.getDistrict(e.value);
         };
 
         _this.onDistrictChange = function (e) {
-            _this.setState({
-                district: e.value
-            });
+            _this.setState({ district: e.value });
         };
 
         _this.resetFillter = function () {
-            _this.setState({
-                province: -1,
-                district: -1
-            });
+            _this.setState({ province: -1, district: -1 });
+        };
+
+        _this.onSizePage = function (data) {
+            var pageNumbers = [];
+            for (var i = 1; i <= Math.ceil(data.length / _this.state.todosPerPage); i++) {
+                pageNumbers.push(i);
+            }
+            return pageNumbers;
         };
 
         _this.state = {
+            currentPage: 1,
+            todosPerPage: 4,
             value: {
                 min: 2,
                 max: 50000
             },
-
             province: -1,
             district: -1
         };
@@ -58865,23 +58848,20 @@ var HomeFillter = function (_Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             this.props.getProvince();
-            // let {selected} = this.props;
-            // if(!isEmpty(selected.province)){
-            //     if(isEmpty(selected.district)){
-            //         this.setState({
-            //             province: selected.province.id
-            //         });
-            //     }
-            //     else{
-            //         this.setState({
-            //             province: selected.province.id,
-            //             district:selected.district.id
-            //         });
-            //     }
-            // }
+        }
+
+        // PAGINATION REACTJS
+
+    }, {
+        key: 'handleClick',
+        value: function handleClick(e) {
+            this.setState({ currentPage: e });
         }
     }, {
         key: 'render',
+
+
+        // RENDER FUNCTION
         value: function render() {
             var _this2 = this;
 
@@ -58889,25 +58869,25 @@ var HomeFillter = function (_Component) {
                 Province = _props.Province,
                 District = _props.District,
                 Motel = _props.Motel;
+            var _state = this.state,
+                currentPage = _state.currentPage,
+                todosPerPage = _state.todosPerPage;
+
+            var indexOfLast = currentPage * todosPerPage;
+            var indexOfFirst = indexOfLast - todosPerPage;
 
             var provinces = [];
             var districts = [];
 
             if (District.isRequest === false && District.isLoading === false) {
                 District.data.map(function (item, index) {
-                    districts.push({
-                        value: item.id,
-                        label: item._prefix + ' ' + item._name
-                    });
+                    districts.push({ value: item.id, label: item._prefix + ' ' + item._name });
                 });
             }
 
             if (Province.isLoading === false) {
                 Province.data.map(function (item, index) {
-                    provinces.push({
-                        value: item.id,
-                        label: item._name
-                    });
+                    provinces.push({ value: item.id, label: item._name });
                 });
             }
 
@@ -58984,15 +58964,14 @@ var HomeFillter = function (_Component) {
                                     placeholder: _react2.default.createElement(
                                         'div',
                                         null,
-                                        'T\u1EC9nh...'
+                                        ' T\u1EC9nh ...'
                                     ),
                                     name: 'form-field-name',
                                     value: this.state.province !== -1 && provinces.find(function (option) {
                                         return option.value === _this2.state.province;
                                     }),
                                     onChange: this.onProvinceChange,
-                                    options: provinces
-                                })
+                                    options: provinces })
                             )
                         ),
                         _react2.default.createElement(
@@ -59010,15 +58989,14 @@ var HomeFillter = function (_Component) {
                                     placeholder: _react2.default.createElement(
                                         'div',
                                         null,
-                                        'Qu\u1EADn, Huy\u1EC7n...'
+                                        ' Qu\u1EADn, Huy\u1EC7n ...'
                                     ),
                                     name: 'form-field-name',
                                     value: this.state.district !== -1 && districts.find(function (option) {
                                         return option.value === _this2.state.district;
                                     }),
                                     onChange: this.onDistrictChange,
-                                    options: districts
-                                })
+                                    options: districts })
                             )
                         ),
                         _react2.default.createElement(
@@ -59026,7 +59004,10 @@ var HomeFillter = function (_Component) {
                             { className: 'form_reset' },
                             _react2.default.createElement(
                                 'button',
-                                { type: 'button', className: 'btn btn-outline btn-reset pull-right', onClick: this.resetFillter },
+                                {
+                                    type: 'button',
+                                    className: 'btn btn-outline btn-reset pull-right',
+                                    onClick: this.resetFillter },
                                 _react2.default.createElement('i', { className: 'fa fa-repeat' }),
                                 'Reset'
                             )
@@ -59064,7 +59045,7 @@ var HomeFillter = function (_Component) {
                                 'span',
                                 null,
                                 Motel.data.length,
-                                ' k\u1EBFt qu\u1EA3'
+                                'k\u1EBFt qu\u1EA3'
                             )
                         )
                     ),
@@ -59080,11 +59061,8 @@ var HomeFillter = function (_Component) {
                                 { className: 'sr-only' },
                                 'Loading...'
                             )
-                        ) : !(0, _lodash.isEmpty)(Motel.data) ? Motel.data.map(function (item, index) {
-                            return _react2.default.createElement(_ItemResult2.default, {
-                                item: item,
-                                key: index
-                            });
+                        ) : !(0, _lodash.isEmpty)(Motel.data) ? Motel.data.slice(indexOfFirst, indexOfLast).map(function (item, index) {
+                            return _react2.default.createElement(_ItemResult2.default, { item: item, key: index });
                         }) : _react2.default.createElement(
                             'div',
                             { className: 'text-center' },
@@ -59092,6 +59070,27 @@ var HomeFillter = function (_Component) {
                                 'span',
                                 { className: 'mt-20' },
                                 'Kh\xF4ng c\xF3 k\u1EBFt qu\u1EA3 ph\xF9 h\u1EE3p!'
+                            )
+                        ),
+                        !(0, _lodash.isEmpty)(Motel.data) && _react2.default.createElement(
+                            'div',
+                            { className: 'text-center' },
+                            _react2.default.createElement(
+                                'ul',
+                                { className: 'pagination' },
+                                this.onSizePage(Motel.data).map(function (num, index) {
+                                    return _react2.default.createElement(
+                                        'li',
+                                        {
+                                            className: 'page-item',
+                                            key: index,
+                                            onClick: function onClick() {
+                                                return _this2.handleClick(num);
+                                            }
+                                        },
+                                        num
+                                    );
+                                })
                             )
                         )
                     )
@@ -68987,9 +68986,11 @@ var Preview = function (_Component) {
             }
         }
     }, {
-        key: 'componentDidUpdate',
-        value: function componentDidUpdate(next) {
-            console.log(next.match.params);
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(next) {
+            if (next.match.params.id !== this.props.match.params.id) {
+                this.props.getItemData(next.match.params.id);
+            }
         }
     }, {
         key: 'componentWillUnmount',
@@ -69002,7 +69003,6 @@ var Preview = function (_Component) {
             var _this2 = this;
 
             var Motel = this.props.Motel;
-
 
             if (Motel.isRequest) {
                 return _react2.default.createElement(
@@ -69248,7 +69248,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, props) {
     };
 };
 
-exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Preview));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Preview);
 
 /***/ }),
 /* 202 */
