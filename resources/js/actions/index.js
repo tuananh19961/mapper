@@ -34,36 +34,16 @@ const getProvinceRequest = () => async dispatch => {
     }
 };
 // Get province selected by fillter
-const getProvinceSelected = (isSuccess, data) => {
+const getProvinceSelected = (data) => {
     return {
         type: types.GET_PROVINCE_SELECTED,
-        payload: {
-            isSuccess,
-            data
-        }
+        selected: data
     }
 }
 
-const getProvinceSelectedRequest = (id) => async dispatch => {
-    try {
-        const result = await getDataByID('/api/provinces',id);
-        if (result) {
-            dispatch(getProvinceSelected(true, result))
-        }
-    } catch (e) {
-        const error = e.response
-            ? e.response.data
-            : {
-                message: "Network Error!"
-            };
-        dispatch(getProvinceSelected(false, error))
-    }
-};
-
-
 export const ProvinceAction = {
     getProvinceRequest,
-    getProvinceSelectedRequest
+    getProvinceSelected
 }
 
 // --- DISTRICT ACTION ---
@@ -99,35 +79,17 @@ const getDistrictRequest = (id) => async dispatch => {
 };
 
 // Get district selected by fillter
-const getDistrictSelected = (isSuccess, data) => {
+const getDistrictSelected = (data) => {
     return {
         type: types.GET_DISTRICT_SELECTED,
-        payload: {
-            isSuccess,
-            data
-        }
+        selected: data
     }
 }
 
-const getDistrictSelectedRequest = (id) => async dispatch => {
-    try {
-        const result = await axios.get(`/api/districts/${id}/fillter`);
-        if (result) {
-            dispatch(getDistrictSelected(true, result))
-        }
-    } catch (e) {
-        const error = e.response
-            ? e.response.data
-            : {
-                message: "Network Error!"
-            };
-        dispatch(getDistrictSelected(false, error))
-    }
-};
 
 export const DistrictAction = {
     getDistrictRequest,
-    getDistrictSelectedRequest
+    getDistrictSelected
 }
 
 

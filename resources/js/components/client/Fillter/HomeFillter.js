@@ -1,18 +1,15 @@
 import React, {Component} from 'react';
 import InputRange from 'react-input-range';
 import 'react-input-range/lib/css/index.css'
-import ItemResult from './ItemResult';
 import Select from 'react-select';
-import {isEmpty} from 'lodash';
 import {connect} from 'react-redux';
 import {ProvinceAction, DistrictAction, MotelAction} from './../../../actions/index';
+import ListResult from './ListResult';
 
 class HomeFillter extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentPage: 1,
-            todosPerPage: 4,
             value: {
                 min: 2,
                 max: 50000
@@ -23,17 +20,17 @@ class HomeFillter extends Component {
     }
 
     onProvinceChange = (e) => {
-
         this.setState({province: e.value, district: -1})
-
+        this.props.getProvinceSelected(e);
         this
             .props
             .getDistrict(e.value);
+
     }
 
     onDistrictChange = (e) => {
         this.setState({district: e.value})
-
+        this.props.getDistrictSelected(e);
     }
 
     resetFillter = () => {
@@ -46,25 +43,9 @@ class HomeFillter extends Component {
             .getProvince();
     }
 
-    // PAGINATION REACTJS
-    handleClick(e) {
-        this.setState({currentPage: e});
-    }
-    onSizePage = (data) => {
-        const pageNumbers = [];
-        for (let i = 1; i <= Math.ceil(data.length / this.state.todosPerPage); i++) {
-            pageNumbers.push(i);
-        }
-        return pageNumbers;
-    }
-
     // RENDER FUNCTION
     render() {
         const {Province, District, Motel} = this.props;
-
-        const {currentPage, todosPerPage} = this.state;
-        const indexOfLast = currentPage * todosPerPage;
-        const indexOfFirst = indexOfLast - todosPerPage;
 
         var provinces = [];
         var districts = [];
@@ -154,64 +135,10 @@ class HomeFillter extends Component {
                 </div>
 
                 {/* RESULT FILLTER */}
-                <div className="result_fillter">
+                <ListResult 
+                    Motel = {Motel}
+                />    
 
-                    <div className="top_result">
-
-                        <div className="item-top">
-                            <select id="inputState" className="form-control">
-                                <option>Sort...</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-
-                        <div className="item-top num_results">
-                            <span>{Motel.data.length}
-                                kết quả</span>
-                        </div>
-                    </div>
-
-                    <div className="list_results">
-
-                        {Motel.isLoading
-                            ? <div className="text-center">
-                                    <i className="fa fa-spinner fa-pulse fa-3x fa-fw mt-20"></i>
-                                    <span className="sr-only">Loading...</span>
-                                </div>
-                            : !isEmpty(Motel.data)
-                                ? Motel
-                                    .data
-                                    .slice(indexOfFirst, indexOfLast)
-                                    .map((item, index) => {
-                                        return <ItemResult item={item} key={index}/>
-                                    })
-                                : <div className="text-center">
-                                    <span className="mt-20">
-                                        Không có kết quả phù hợp!
-                                    </span>
-                                </div>
-                        }
-
-                        {!isEmpty(Motel.data) && <div className="text-center">
-                            <ul className="pagination">
-                                {this
-                                    .onSizePage(Motel.data)
-                                    .map((num, index) => {
-                                        return <li 
-                                            className="page-item" 
-                                            key={index} 
-                                            onClick={() => this.handleClick(num)}
-                                        >
-                                            {num}
-                                        </li>
-                                    })}
-                            </ul>
-                        </div>
-                        }
-
-                    </div>
-
-                </div>
             </div>
         );
     }
@@ -225,8 +152,8 @@ const mapDispatchToProps = (dispatch, props) => {
         getProvince: () => dispatch(ProvinceAction.getProvinceRequest()),
         getDistrict: (id) => dispatch(DistrictAction.getDistrictRequest(id)),
         getMotel: () => dispatch(MotelAction.getMotelRequest()),
-        getProvinceSelected: (id) => dispatch(ProvinceAction.getProvinceSelectedRequest(id)),
-        getDistrictSelected: (id) => dispatch(DistrictAction.getDistrictSelectedRequest(id))
+        getProvinceSelected: (item) => dispatch(ProvinceAction.getProvinceSelected(item)),
+        getDistrictSelected: (item) => dispatch(DistrictAction.getDistrictSelected(item))
     }
 }
 

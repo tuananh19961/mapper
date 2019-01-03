@@ -39,24 +39,10 @@ const Province = (state = initialState, action) => {
                 };
 
             case types.GET_PROVINCE_SELECTED:
-                if (action.payload.isSuccess) {
-                    return {
-                        ...state,
-                        selected: action.payload.data.data,
-                        isRequest: false,
-                        isLoading: false,
-                        status:true,
-                        messages: 'Load success!'
-                    };
-                    }
-                    else
-                    return {
-                        ...state,
-                        isRequest: false,
-                        isLoading: false,
-                        status:false,
-                        messages: action.payload.data.messages
-                    };
+                return {
+                    ...state,
+                    selected: action.selected,
+                };
                     
         default:
             return {...state}

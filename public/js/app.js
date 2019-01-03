@@ -2079,63 +2079,16 @@ var getProvinceRequest = function getProvinceRequest() {
     }();
 };
 // Get province selected by fillter
-var getProvinceSelected = function getProvinceSelected(isSuccess, data) {
+var getProvinceSelected = function getProvinceSelected(data) {
     return {
         type: types.GET_PROVINCE_SELECTED,
-        payload: {
-            isSuccess: isSuccess,
-            data: data
-        }
+        selected: data
     };
-};
-
-var getProvinceSelectedRequest = function getProvinceSelectedRequest(id) {
-    return function () {
-        var _ref2 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee2(dispatch) {
-            var result, error;
-            return _regenerator2.default.wrap(function _callee2$(_context2) {
-                while (1) {
-                    switch (_context2.prev = _context2.next) {
-                        case 0:
-                            _context2.prev = 0;
-                            _context2.next = 3;
-                            return (0, _baseService.getDataByID)('/api/provinces', id);
-
-                        case 3:
-                            result = _context2.sent;
-
-                            if (result) {
-                                dispatch(getProvinceSelected(true, result));
-                            }
-                            _context2.next = 11;
-                            break;
-
-                        case 7:
-                            _context2.prev = 7;
-                            _context2.t0 = _context2['catch'](0);
-                            error = _context2.t0.response ? _context2.t0.response.data : {
-                                message: "Network Error!"
-                            };
-
-                            dispatch(getProvinceSelected(false, error));
-
-                        case 11:
-                        case 'end':
-                            return _context2.stop();
-                    }
-                }
-            }, _callee2, undefined, [[0, 7]]);
-        }));
-
-        return function (_x2) {
-            return _ref2.apply(this, arguments);
-        };
-    }();
 };
 
 var ProvinceAction = exports.ProvinceAction = {
     getProvinceRequest: getProvinceRequest,
-    getProvinceSelectedRequest: getProvinceSelectedRequest
+    getProvinceSelected: getProvinceSelected
 
     // --- DISTRICT ACTION ---
 };var districtRequest = function districtRequest() {
@@ -2154,30 +2107,30 @@ var getDistrict = function getDistrict(isSuccess, data) {
 
 var getDistrictRequest = function getDistrictRequest(id) {
     return function () {
-        var _ref3 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee3(dispatch) {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee2(dispatch) {
             var result, error;
-            return _regenerator2.default.wrap(function _callee3$(_context3) {
+            return _regenerator2.default.wrap(function _callee2$(_context2) {
                 while (1) {
-                    switch (_context3.prev = _context3.next) {
+                    switch (_context2.prev = _context2.next) {
                         case 0:
                             dispatch(districtRequest());
-                            _context3.prev = 1;
-                            _context3.next = 4;
+                            _context2.prev = 1;
+                            _context2.next = 4;
                             return (0, _baseService.getDataByID)('/api/districts', id);
 
                         case 4:
-                            result = _context3.sent;
+                            result = _context2.sent;
 
                             if (result) {
                                 dispatch(getDistrict(true, result));
                             }
-                            _context3.next = 12;
+                            _context2.next = 12;
                             break;
 
                         case 8:
-                            _context3.prev = 8;
-                            _context3.t0 = _context3['catch'](1);
-                            error = _context3.t0.response ? _context3.t0.response.data : {
+                            _context2.prev = 8;
+                            _context2.t0 = _context2['catch'](1);
+                            error = _context2.t0.response ? _context2.t0.response.data : {
                                 message: "Network Error!"
                             };
 
@@ -2185,76 +2138,29 @@ var getDistrictRequest = function getDistrictRequest(id) {
 
                         case 12:
                         case 'end':
-                            return _context3.stop();
+                            return _context2.stop();
                     }
                 }
-            }, _callee3, undefined, [[1, 8]]);
+            }, _callee2, undefined, [[1, 8]]);
         }));
 
-        return function (_x3) {
-            return _ref3.apply(this, arguments);
+        return function (_x2) {
+            return _ref2.apply(this, arguments);
         };
     }();
 };
 
 // Get district selected by fillter
-var getDistrictSelected = function getDistrictSelected(isSuccess, data) {
+var getDistrictSelected = function getDistrictSelected(data) {
     return {
         type: types.GET_DISTRICT_SELECTED,
-        payload: {
-            isSuccess: isSuccess,
-            data: data
-        }
+        selected: data
     };
-};
-
-var getDistrictSelectedRequest = function getDistrictSelectedRequest(id) {
-    return function () {
-        var _ref4 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee4(dispatch) {
-            var result, error;
-            return _regenerator2.default.wrap(function _callee4$(_context4) {
-                while (1) {
-                    switch (_context4.prev = _context4.next) {
-                        case 0:
-                            _context4.prev = 0;
-                            _context4.next = 3;
-                            return _axios2.default.get('/api/districts/' + id + '/fillter');
-
-                        case 3:
-                            result = _context4.sent;
-
-                            if (result) {
-                                dispatch(getDistrictSelected(true, result));
-                            }
-                            _context4.next = 11;
-                            break;
-
-                        case 7:
-                            _context4.prev = 7;
-                            _context4.t0 = _context4['catch'](0);
-                            error = _context4.t0.response ? _context4.t0.response.data : {
-                                message: "Network Error!"
-                            };
-
-                            dispatch(getDistrictSelected(false, error));
-
-                        case 11:
-                        case 'end':
-                            return _context4.stop();
-                    }
-                }
-            }, _callee4, undefined, [[0, 7]]);
-        }));
-
-        return function (_x4) {
-            return _ref4.apply(this, arguments);
-        };
-    }();
 };
 
 var DistrictAction = exports.DistrictAction = {
     getDistrictRequest: getDistrictRequest,
-    getDistrictSelectedRequest: getDistrictSelectedRequest
+    getDistrictSelected: getDistrictSelected
 
     // --- MOTEL ACTION ---
 };var motelRequest = function motelRequest() {
@@ -2273,30 +2179,30 @@ var getMotel = function getMotel(isSuccess, data) {
 
 var getMotelRequest = function getMotelRequest() {
     return function () {
-        var _ref5 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee5(dispatch) {
+        var _ref3 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee3(dispatch) {
             var result, error;
-            return _regenerator2.default.wrap(function _callee5$(_context5) {
+            return _regenerator2.default.wrap(function _callee3$(_context3) {
                 while (1) {
-                    switch (_context5.prev = _context5.next) {
+                    switch (_context3.prev = _context3.next) {
                         case 0:
                             dispatch(motelRequest());
-                            _context5.prev = 1;
-                            _context5.next = 4;
+                            _context3.prev = 1;
+                            _context3.next = 4;
                             return (0, _baseService.getTakenData)('/api/motels');
 
                         case 4:
-                            result = _context5.sent;
+                            result = _context3.sent;
 
                             if (result) {
                                 dispatch(getMotel(true, result));
                             }
-                            _context5.next = 12;
+                            _context3.next = 12;
                             break;
 
                         case 8:
-                            _context5.prev = 8;
-                            _context5.t0 = _context5['catch'](1);
-                            error = _context5.t0.response ? _context5.t0.response.data : {
+                            _context3.prev = 8;
+                            _context3.t0 = _context3['catch'](1);
+                            error = _context3.t0.response ? _context3.t0.response.data : {
                                 message: "Network Error!"
                             };
 
@@ -2304,14 +2210,14 @@ var getMotelRequest = function getMotelRequest() {
 
                         case 12:
                         case 'end':
-                            return _context5.stop();
+                            return _context3.stop();
                     }
                 }
-            }, _callee5, undefined, [[1, 8]]);
+            }, _callee3, undefined, [[1, 8]]);
         }));
 
-        return function (_x5) {
-            return _ref5.apply(this, arguments);
+        return function (_x3) {
+            return _ref3.apply(this, arguments);
         };
     }();
 };
@@ -2328,30 +2234,30 @@ var getMotelItem = function getMotelItem(isSuccess, data) {
 
 var getMotelItemRequest = function getMotelItemRequest(id) {
     return function () {
-        var _ref6 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee6(dispatch) {
+        var _ref4 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee4(dispatch) {
             var result, error;
-            return _regenerator2.default.wrap(function _callee6$(_context6) {
+            return _regenerator2.default.wrap(function _callee4$(_context4) {
                 while (1) {
-                    switch (_context6.prev = _context6.next) {
+                    switch (_context4.prev = _context4.next) {
                         case 0:
                             dispatch(motelRequest());
-                            _context6.prev = 1;
-                            _context6.next = 4;
+                            _context4.prev = 1;
+                            _context4.next = 4;
                             return (0, _baseService.getDataByID)('/api/motels', id);
 
                         case 4:
-                            result = _context6.sent;
+                            result = _context4.sent;
 
                             if (result) {
                                 dispatch(getMotelItem(true, result));
                             }
-                            _context6.next = 12;
+                            _context4.next = 12;
                             break;
 
                         case 8:
-                            _context6.prev = 8;
-                            _context6.t0 = _context6['catch'](1);
-                            error = _context6.t0.response ? _context6.t0.response.data : {
+                            _context4.prev = 8;
+                            _context4.t0 = _context4['catch'](1);
+                            error = _context4.t0.response ? _context4.t0.response.data : {
                                 message: "Network Error!"
                             };
 
@@ -2359,14 +2265,14 @@ var getMotelItemRequest = function getMotelItemRequest(id) {
 
                         case 12:
                         case 'end':
-                            return _context6.stop();
+                            return _context4.stop();
                     }
                 }
-            }, _callee6, undefined, [[1, 8]]);
+            }, _callee4, undefined, [[1, 8]]);
         }));
 
-        return function (_x6) {
-            return _ref6.apply(this, arguments);
+        return function (_x4) {
+            return _ref4.apply(this, arguments);
         };
     }();
 };
@@ -48499,19 +48405,9 @@ var District = function District() {
             });
 
         case types.GET_DISTRICT_SELECTED:
-            if (action.payload.isSuccess) {
-                return _extends({}, state, {
-                    selected: action.payload.data.data,
-                    isRequest: false,
-                    isLoading: false,
-                    status: true,
-                    messages: 'Load success!'
-                });
-            } else return _extends({}, state, {
-                isRequest: false,
-                isLoading: false,
-                status: false,
-                messages: action.payload.data.messages
+
+            return _extends({}, state, {
+                selected: action.selected
             });
 
         default:
@@ -48577,19 +48473,8 @@ var Province = function Province() {
             });
 
         case types.GET_PROVINCE_SELECTED:
-            if (action.payload.isSuccess) {
-                return _extends({}, state, {
-                    selected: action.payload.data.data,
-                    isRequest: false,
-                    isLoading: false,
-                    status: true,
-                    messages: 'Load success!'
-                });
-            } else return _extends({}, state, {
-                isRequest: false,
-                isLoading: false,
-                status: false,
-                messages: action.payload.data.messages
+            return _extends({}, state, {
+                selected: action.selected
             });
 
         default:
@@ -51211,6 +51096,8 @@ var _reactRedux = __webpack_require__(8);
 
 var _reactRouterDom = __webpack_require__(9);
 
+var _lodash = __webpack_require__(61);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -51273,12 +51160,52 @@ var HomeMap = function (_Component) {
             this.props.getMotel();
         }
     }, {
-        key: 'render',
-        value: function render() {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps(next) {
             var _this2 = this;
 
-            var Motel = this.props.Motel;
+            if (!(0, _lodash.isEmpty)(next.Province.selected)) {
+                if (!(0, _lodash.isEmpty)(next.District.selected)) {
+                    _reactGeocode2.default.fromAddress(next.District.selected.label + ' ' + next.Province.selected.label).then(function (response) {
+                        var _response$results$0$g = response.results[0].geometry.location,
+                            lat = _response$results$0$g.lat,
+                            lng = _response$results$0$g.lng;
 
+                        _this2.setState({
+                            center: {
+                                lat: lat,
+                                lng: lng
+                            },
+                            zoom: 15
+                        });
+                    }, function (error) {
+                        console.error(error);
+                    });
+                } else {
+                    _reactGeocode2.default.fromAddress(next.Province.selected.label).then(function (response) {
+                        var _response$results$0$g2 = response.results[0].geometry.location,
+                            lat = _response$results$0$g2.lat,
+                            lng = _response$results$0$g2.lng;
+
+                        _this2.setState({
+                            center: {
+                                lat: lat,
+                                lng: lng
+                            },
+                            zoom: 14
+                        });
+                    }, function (error) {
+                        console.error(error);
+                    });
+                }
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this3 = this;
+
+            var Motel = this.props.Motel;
 
             return _react2.default.createElement(
                 _googleMapsReact.Map,
@@ -51286,7 +51213,6 @@ var HomeMap = function (_Component) {
                     google: this.props.google,
                     className: 'map',
                     id: 'onMap',
-                    initialCenter: {},
                     center: {
                         lat: this.state.center.lat,
                         lng: this.state.center.lng
@@ -51296,10 +51222,10 @@ var HomeMap = function (_Component) {
                     return _react2.default.createElement(_googleMapsReact.Marker, {
                         index: index,
                         icon: item.id === Motel.item_hover.id ? icon : icon2,
-                        onMouseover: _this2.onMouseover,
-                        onMouseout: _this2.onMouseout,
+                        onMouseover: _this3.onMouseover,
+                        onMouseout: _this3.onMouseout,
                         onClick: function onClick() {
-                            return _this2.onSelectItem(item);
+                            return _this3.onSelectItem(item);
                         },
                         title: item.title,
                         position: {
@@ -58778,19 +58704,17 @@ var _reactInputRange2 = _interopRequireDefault(_reactInputRange);
 
 __webpack_require__(176);
 
-var _ItemResult = __webpack_require__(179);
-
-var _ItemResult2 = _interopRequireDefault(_ItemResult);
-
 var _reactSelect = __webpack_require__(180);
 
 var _reactSelect2 = _interopRequireDefault(_reactSelect);
 
-var _lodash = __webpack_require__(61);
-
 var _reactRedux = __webpack_require__(8);
 
 var _index = __webpack_require__(19);
+
+var _ListResult = __webpack_require__(214);
+
+var _ListResult2 = _interopRequireDefault(_ListResult);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -58809,31 +58733,21 @@ var HomeFillter = function (_Component) {
         var _this = _possibleConstructorReturn(this, (HomeFillter.__proto__ || Object.getPrototypeOf(HomeFillter)).call(this, props));
 
         _this.onProvinceChange = function (e) {
-
             _this.setState({ province: e.value, district: -1 });
-
+            _this.props.getProvinceSelected(e);
             _this.props.getDistrict(e.value);
         };
 
         _this.onDistrictChange = function (e) {
             _this.setState({ district: e.value });
+            _this.props.getDistrictSelected(e);
         };
 
         _this.resetFillter = function () {
             _this.setState({ province: -1, district: -1 });
         };
 
-        _this.onSizePage = function (data) {
-            var pageNumbers = [];
-            for (var i = 1; i <= Math.ceil(data.length / _this.state.todosPerPage); i++) {
-                pageNumbers.push(i);
-            }
-            return pageNumbers;
-        };
-
         _this.state = {
-            currentPage: 1,
-            todosPerPage: 4,
             value: {
                 min: 2,
                 max: 50000
@@ -58850,18 +58764,10 @@ var HomeFillter = function (_Component) {
             this.props.getProvince();
         }
 
-        // PAGINATION REACTJS
+        // RENDER FUNCTION
 
-    }, {
-        key: 'handleClick',
-        value: function handleClick(e) {
-            this.setState({ currentPage: e });
-        }
     }, {
         key: 'render',
-
-
-        // RENDER FUNCTION
         value: function render() {
             var _this2 = this;
 
@@ -58869,12 +58775,7 @@ var HomeFillter = function (_Component) {
                 Province = _props.Province,
                 District = _props.District,
                 Motel = _props.Motel;
-            var _state = this.state,
-                currentPage = _state.currentPage,
-                todosPerPage = _state.todosPerPage;
 
-            var indexOfLast = currentPage * todosPerPage;
-            var indexOfFirst = indexOfLast - todosPerPage;
 
             var provinces = [];
             var districts = [];
@@ -59014,87 +58915,9 @@ var HomeFillter = function (_Component) {
                         )
                     )
                 ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'result_fillter' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'top_result' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'item-top' },
-                            _react2.default.createElement(
-                                'select',
-                                { id: 'inputState', className: 'form-control' },
-                                _react2.default.createElement(
-                                    'option',
-                                    null,
-                                    'Sort...'
-                                ),
-                                _react2.default.createElement(
-                                    'option',
-                                    null,
-                                    '...'
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'item-top num_results' },
-                            _react2.default.createElement(
-                                'span',
-                                null,
-                                Motel.data.length,
-                                'k\u1EBFt qu\u1EA3'
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'list_results' },
-                        Motel.isLoading ? _react2.default.createElement(
-                            'div',
-                            { className: 'text-center' },
-                            _react2.default.createElement('i', { className: 'fa fa-spinner fa-pulse fa-3x fa-fw mt-20' }),
-                            _react2.default.createElement(
-                                'span',
-                                { className: 'sr-only' },
-                                'Loading...'
-                            )
-                        ) : !(0, _lodash.isEmpty)(Motel.data) ? Motel.data.slice(indexOfFirst, indexOfLast).map(function (item, index) {
-                            return _react2.default.createElement(_ItemResult2.default, { item: item, key: index });
-                        }) : _react2.default.createElement(
-                            'div',
-                            { className: 'text-center' },
-                            _react2.default.createElement(
-                                'span',
-                                { className: 'mt-20' },
-                                'Kh\xF4ng c\xF3 k\u1EBFt qu\u1EA3 ph\xF9 h\u1EE3p!'
-                            )
-                        ),
-                        !(0, _lodash.isEmpty)(Motel.data) && _react2.default.createElement(
-                            'div',
-                            { className: 'text-center' },
-                            _react2.default.createElement(
-                                'ul',
-                                { className: 'pagination' },
-                                this.onSizePage(Motel.data).map(function (num, index) {
-                                    return _react2.default.createElement(
-                                        'li',
-                                        {
-                                            className: 'page-item',
-                                            key: index,
-                                            onClick: function onClick() {
-                                                return _this2.handleClick(num);
-                                            }
-                                        },
-                                        num
-                                    );
-                                })
-                            )
-                        )
-                    )
-                )
+                _react2.default.createElement(_ListResult2.default, {
+                    Motel: Motel
+                })
             );
         }
     }]);
@@ -59117,11 +58940,11 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, props) {
         getMotel: function getMotel() {
             return dispatch(_index.MotelAction.getMotelRequest());
         },
-        getProvinceSelected: function getProvinceSelected(id) {
-            return dispatch(_index.ProvinceAction.getProvinceSelectedRequest(id));
+        getProvinceSelected: function getProvinceSelected(item) {
+            return dispatch(_index.ProvinceAction.getProvinceSelected(item));
         },
-        getDistrictSelected: function getDistrictSelected(id) {
-            return dispatch(_index.DistrictAction.getDistrictSelectedRequest(id));
+        getDistrictSelected: function getDistrictSelected(item) {
+            return dispatch(_index.DistrictAction.getDistrictSelected(item));
         }
     };
 };
@@ -71098,6 +70921,171 @@ var unit = exports.unit = function unit(props, propName, componentName) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 213 */,
+/* 214 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ItemResult = __webpack_require__(179);
+
+var _ItemResult2 = _interopRequireDefault(_ItemResult);
+
+var _lodash = __webpack_require__(61);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ListResult = function (_Component) {
+    _inherits(ListResult, _Component);
+
+    function ListResult(props) {
+        _classCallCheck(this, ListResult);
+
+        var _this = _possibleConstructorReturn(this, (ListResult.__proto__ || Object.getPrototypeOf(ListResult)).call(this, props));
+
+        _this.onSizePage = function (data) {
+            var pageNumbers = [];
+            for (var i = 1; i <= Math.ceil(data.length / _this.state.todosPerPage); i++) {
+                pageNumbers.push(i);
+            }
+            return pageNumbers;
+        };
+
+        _this.state = {
+            currentPage: 1,
+            todosPerPage: 4
+        };
+        return _this;
+    }
+
+    // PAGINATION REACTJS
+
+
+    _createClass(ListResult, [{
+        key: 'handleClick',
+        value: function handleClick(e) {
+            this.setState({ currentPage: e });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var Motel = this.props.Motel;
+            var _state = this.state,
+                currentPage = _state.currentPage,
+                todosPerPage = _state.todosPerPage;
+
+            var indexOfLast = currentPage * todosPerPage;
+            var indexOfFirst = indexOfLast - todosPerPage;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'result_fillter' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'top_result' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'item-top' },
+                        _react2.default.createElement(
+                            'select',
+                            { id: 'inputState', className: 'form-control' },
+                            _react2.default.createElement(
+                                'option',
+                                null,
+                                'Sort...'
+                            ),
+                            _react2.default.createElement(
+                                'option',
+                                null,
+                                '...'
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'item-top num_results' },
+                        _react2.default.createElement(
+                            'span',
+                            null,
+                            Motel.data.length,
+                            'k\u1EBFt qu\u1EA3'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'list_results' },
+                    Motel.isLoading ? _react2.default.createElement(
+                        'div',
+                        { className: 'text-center' },
+                        _react2.default.createElement('i', { className: 'fa fa-spinner fa-pulse fa-3x fa-fw mt-20' }),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'sr-only' },
+                            'Loading...'
+                        )
+                    ) : !(0, _lodash.isEmpty)(Motel.data) ? Motel.data.slice(indexOfFirst, indexOfLast).map(function (item, index) {
+                        return _react2.default.createElement(_ItemResult2.default, { item: item, key: index });
+                    }) : _react2.default.createElement(
+                        'div',
+                        { className: 'text-center' },
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'mt-20' },
+                            'Kh\xF4ng c\xF3 k\u1EBFt qu\u1EA3 ph\xF9 h\u1EE3p!'
+                        )
+                    ),
+                    !(0, _lodash.isEmpty)(Motel.data) && _react2.default.createElement(
+                        'div',
+                        { className: 'text-center' },
+                        _react2.default.createElement(
+                            'ul',
+                            { className: 'pagination' },
+                            this.onSizePage(Motel.data).map(function (num, index) {
+                                return _react2.default.createElement(
+                                    'li',
+                                    {
+                                        className: 'page-item',
+                                        key: index,
+                                        onClick: function onClick() {
+                                            return _this2.handleClick(num);
+                                        }
+                                    },
+                                    num
+                                );
+                            })
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return ListResult;
+}(_react.Component);
+
+exports.default = ListResult;
 
 /***/ })
 /******/ ]);

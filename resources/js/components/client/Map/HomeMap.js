@@ -5,6 +5,7 @@ import {to_slug} from './../../../services/base-service';
 import {MotelAction} from './../../../actions/index';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
+import { isEmpty } from 'lodash';
 
 const icon = {
     url: 'https://img.icons8.com/ultraviolet/1600/marker.png',
@@ -56,17 +57,52 @@ class HomeMap extends Component {
             this.props.history.push(`/view/${item.id}/${to_slug(item.title)}.html`)
     }
 
+    componentWillReceiveProps(next){
+        if(!isEmpty(next.Province.selected)){
+            if(!isEmpty(next.District.selected)){
+                Geocode.fromAddress(`${next.District.selected.label} ${next.Province.selected.label}`).then(
+                    response => {
+                      const { lat, lng } = response.results[0].geometry.location;
+                      this.setState({
+                            center:{
+                                lat: lat,
+                                lng: lng
+                            },
+                            zoom:15
+                      })
+                    },
+                    error => {
+                      console.error(error);
+                    }
+                );
+            }
+            else{
+                Geocode.fromAddress(next.Province.selected.label).then(
+                    response => {
+                      const { lat, lng } = response.results[0].geometry.location;
+                      this.setState({
+                            center:{
+                                lat: lat,
+                                lng: lng
+                            },
+                            zoom:14
+                      })
+                    },
+                    error => {
+                      console.error(error);
+                    }
+                );
+            }   
+        }      
+    }
+
     render() {
         var {Motel} = this.props;
-
         return (
             <Map
                 google={this.props.google}
                 className="map"
                 id="onMap"
-                initialCenter={{
-                         
-                }}
                 center={{
                     lat: this.state.center.lat,
                     lng: this.state.center.lng

@@ -37,23 +37,11 @@ const District = (state = initialState, action) => {
                 };
 
             case types.GET_DISTRICT_SELECTED:
-            if (action.payload.isSuccess) {
+            
                 return {
                     ...state,
-                    selected: action.payload.data.data,
-                    isRequest: false,
-                    isLoading: false,
-                    status: true,
-                    messages: 'Load success!'
-                };
-            } else 
-                return {
-                    ...state,
-                    isRequest: false,
-                    isLoading: false,
-                    status: false,
-                    messages: action.payload.data.messages
-                };
+                    selected: action.selected,
+                }
 
             default:
             return {

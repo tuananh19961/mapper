@@ -526,7 +526,7 @@ padding: 5px 0;
 
 ul.pagination{
     display: inline-flex !important;
-    border-top: 1px solid #555;
+    border-top: 1px dashed #ccc;
     padding-top: 5px;
     margin-top: 5px;
     border-radius: unset;
