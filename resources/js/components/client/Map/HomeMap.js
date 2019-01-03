@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper, Polyline} from 'google-maps-react';
 import Geocode from "react-geocode";
 import {isEmpty, findIndex} from 'lodash';
+import { ProvinceAction, DistrictAction, MotelAction} from './../../../actions/index';
+import { connect } from 'react-redux';
 
 const icon = {
     url: 'https://img.icons8.com/ultraviolet/1600/marker.png',
@@ -30,80 +32,7 @@ class HomeMap extends Component {
 
     componentDidMount() {
         Geocode.setApiKey("AIzaSyAiQX1yfcvHCeM98e6asi-Wi-Y_H4-V1Qw");
-
-        let {Province, District} = this.props;
-
-        if (!isEmpty(Province)) {
-            if (isEmpty(District)) {
-                Geocode
-                    .fromAddress(Province._name)
-                    .then(response => {
-                        const {lat, lng} = response.results[0].geometry.location;
-                        this.setState({
-                            center: {
-                                lat: lat,
-                                lng: lng
-                            },
-                            zoom: 14
-                        })
-                    }, error => {
-                        console.error(error);
-                    });
-            } else {
-                Geocode
-                    .fromAddress(`${District._prefix} ${District._name}, ${Province._name}`)
-                    .then(response => {
-                        const {lat, lng} = response.results[0].geometry.location;
-                        this.setState({
-                            center: {
-                                lat: lat,
-                                lng: lng
-                            },
-                            zoom: 14
-                        })
-                    }, error => {
-                        console.error(error);
-                    });
-            }
-        }
-    }
-
-    componentWillReceiveProps(next) {
-        if (!isEmpty(next.Province)) {
-            if (isEmpty(next.District)) {
-                Geocode
-                    .fromAddress(next.Province._name)
-                    .then(response => {
-                        const {lat, lng} = response.results[0].geometry.location;
-                        this.setState({
-                            center: {
-                                lat: lat,
-                                lng: lng
-                            },
-                            zoom: 14
-                        })
-                    }, error => {
-                        console.error(error);
-                    });
-            } else {
-                let {District, Province} = next;
-                Geocode
-                    .fromAddress(`${District._prefix} ${District._name}, ${Province._name}`)
-                    .then(response => {
-                        const {lat, lng} = response.results[0].geometry.location;
-                        this.setState({
-                            center: {
-                                lat: lat,
-                                lng: lng
-                            },
-                            zoom: 14
-                        })
-                    }, error => {
-                        console.error(error);
-                    });
-            }
-
-        }
+        this.props.getMotel();
     }
 
     onMouseover = (props, marker, e) => {
@@ -156,4 +85,19 @@ class HomeMap extends Component {
     }
 }
 
-export default GoogleApiWrapper({apiKey: ('AIzaSyAiQX1yfcvHCeM98e6asi-Wi-Y_H4-V1Qw')})(HomeMap);
+const mapStateToProps = (state) => {
+    return {Province: state.Province, District: state.District, Motel: state.Motel}
+}
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        getProvince: () => dispatch(ProvinceAction.getProvinceRequest()),
+        getDistrict: (id) => dispatch(DistrictAction.getDistrictRequest(id)),
+        getMotel: () => dispatch(MotelAction.getMotelRequest()),
+        getProvinceSelected: (id) => dispatch(ProvinceAction.getProvinceSelectedRequest(id)),
+        getDistrictSelected: (id) => dispatch(DistrictAction.getDistrictSelectedRequest(id)),
+        getItemMotel: (id) => dispatch(MotelAction.getMotelItemRequest(id))
+    }
+}
+
+export default GoogleApiWrapper({apiKey: ('AIzaSyAiQX1yfcvHCeM98e6asi-Wi-Y_H4-V1Qw')})(connect(mapStateToProps,mapDispatchToProps)(HomeMap));

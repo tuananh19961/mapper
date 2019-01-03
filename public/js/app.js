@@ -118,7 +118,7 @@ if (true) {
 "use strict";
 
 
-var bind = __webpack_require__(51);
+var bind = __webpack_require__(52);
 var isBuffer = __webpack_require__(164);
 
 /*global toString:true*/
@@ -629,7 +629,7 @@ module.exports = g;
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__createHashHistory__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(102);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(17);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PathUtils__ = __webpack_require__(8);
@@ -862,7 +862,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 var printWarning = function() {};
 
 if (true) {
-  var ReactPropTypesSecret = __webpack_require__(31);
+  var ReactPropTypesSecret = __webpack_require__(32);
   var loggedTypeFailures = {};
 
   printWarning = function(text) {
@@ -945,6 +945,26 @@ module.exports = checkPropTypes;
 
 /***/ }),
 /* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Provider__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Context__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__connect_connect__ = __webpack_require__(79);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Provider", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connectAdvanced", function() { return __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ReactReduxContext", function() { return __WEBPACK_IMPORTED_MODULE_2__components_Context__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connect", function() { return __WEBPACK_IMPORTED_MODULE_3__connect_connect__["a"]; });
+
+
+
+
+
+
+/***/ }),
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1595,7 +1615,7 @@ if ("development" !== 'production' && typeof isCrushed.name === 'string' && isCr
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1622,7 +1642,7 @@ var ITEM_HOVER = exports.ITEM_HOVER = 'ITEM_HOVER';
 var ON_MOUSE_OUT = exports.ON_MOUSE_OUT = 'ON_MOUSE_OUT';
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1631,7 +1651,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserRouter", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(103);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HashRouter", function() { return __WEBPACK_IMPORTED_MODULE_1__HashRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(40);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Link", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(104);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MemoryRouter", function() { return __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__["a"]; });
@@ -1641,7 +1661,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Prompt", function() { return __WEBPACK_IMPORTED_MODULE_5__Prompt__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(110);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_6__Redirect__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(41);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(23);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_8__Router__["a"]; });
@@ -1685,7 +1705,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1752,7 +1772,7 @@ module.exports = warning;
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1828,7 +1848,7 @@ var locationsAreEqual = function locationsAreEqual(a, b) {
 };
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1905,26 +1925,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 18 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Provider__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Context__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__connect_connect__ = __webpack_require__(79);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Provider", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connectAdvanced", function() { return __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ReactReduxContext", function() { return __WEBPACK_IMPORTED_MODULE_2__components_Context__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connect", function() { return __WEBPACK_IMPORTED_MODULE_3__connect_connect__["a"]; });
-
-
-
-
-
-
-/***/ }),
 /* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1986,7 +1986,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 
 
@@ -2201,7 +2201,7 @@ Router.childContextTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_path_to_regexp__);
 
 
@@ -19526,11 +19526,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.formatPhone = exports.to_slug = exports.formatCurrency = exports.getDataByID = exports.getTakenData = undefined;
 
-var _regenerator = __webpack_require__(49);
+var _regenerator = __webpack_require__(50);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
-var _axios = __webpack_require__(50);
+var _axios = __webpack_require__(51);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -19677,10 +19677,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(53);
+    adapter = __webpack_require__(54);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(53);
+    adapter = __webpack_require__(54);
   }
   return adapter;
 }
@@ -19755,10 +19755,415 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(53)))
 
 /***/ }),
 /* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.MotelAction = exports.DistrictAction = exports.ProvinceAction = undefined;
+
+var _regenerator = __webpack_require__(50);
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _ActionType = __webpack_require__(14);
+
+var types = _interopRequireWildcard(_ActionType);
+
+var _baseService = __webpack_require__(29);
+
+var _axios = __webpack_require__(51);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+var provinceRequest = function provinceRequest() {
+    return { type: types.PROVINCE_REQUEST };
+};
+
+// Get list province
+var getProvince = function getProvince(isSuccess, data) {
+    return {
+        type: types.GET_LIST_PROVINCE,
+        payload: {
+            isSuccess: isSuccess,
+            data: data
+        }
+    };
+};
+
+var getProvinceRequest = function getProvinceRequest() {
+    return function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee(dispatch) {
+            var result, error;
+            return _regenerator2.default.wrap(function _callee$(_context) {
+                while (1) {
+                    switch (_context.prev = _context.next) {
+                        case 0:
+                            dispatch(provinceRequest());
+                            _context.prev = 1;
+                            _context.next = 4;
+                            return (0, _baseService.getTakenData)('/api/provinces');
+
+                        case 4:
+                            result = _context.sent;
+
+                            if (result) {
+                                dispatch(getProvince(true, result));
+                            }
+                            _context.next = 12;
+                            break;
+
+                        case 8:
+                            _context.prev = 8;
+                            _context.t0 = _context['catch'](1);
+                            error = _context.t0.response ? _context.t0.response.data : {
+                                message: "Network Error!"
+                            };
+
+                            dispatch(getProvince(false, error));
+
+                        case 12:
+                        case 'end':
+                            return _context.stop();
+                    }
+                }
+            }, _callee, undefined, [[1, 8]]);
+        }));
+
+        return function (_x) {
+            return _ref.apply(this, arguments);
+        };
+    }();
+};
+// Get province selected by fillter
+var getProvinceSelected = function getProvinceSelected(isSuccess, data) {
+    return {
+        type: types.GET_PROVINCE_SELECTED,
+        payload: {
+            isSuccess: isSuccess,
+            data: data
+        }
+    };
+};
+
+var getProvinceSelectedRequest = function getProvinceSelectedRequest(id) {
+    return function () {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee2(dispatch) {
+            var result, error;
+            return _regenerator2.default.wrap(function _callee2$(_context2) {
+                while (1) {
+                    switch (_context2.prev = _context2.next) {
+                        case 0:
+                            _context2.prev = 0;
+                            _context2.next = 3;
+                            return (0, _baseService.getDataByID)('/api/provinces', id);
+
+                        case 3:
+                            result = _context2.sent;
+
+                            if (result) {
+                                dispatch(getProvinceSelected(true, result));
+                            }
+                            _context2.next = 11;
+                            break;
+
+                        case 7:
+                            _context2.prev = 7;
+                            _context2.t0 = _context2['catch'](0);
+                            error = _context2.t0.response ? _context2.t0.response.data : {
+                                message: "Network Error!"
+                            };
+
+                            dispatch(getProvinceSelected(false, error));
+
+                        case 11:
+                        case 'end':
+                            return _context2.stop();
+                    }
+                }
+            }, _callee2, undefined, [[0, 7]]);
+        }));
+
+        return function (_x2) {
+            return _ref2.apply(this, arguments);
+        };
+    }();
+};
+
+var ProvinceAction = exports.ProvinceAction = {
+    getProvinceRequest: getProvinceRequest,
+    getProvinceSelectedRequest: getProvinceSelectedRequest
+
+    // --- DISTRICT ACTION ---
+};var districtRequest = function districtRequest() {
+    return { type: types.DISTRICT_REQUEST };
+};
+
+var getDistrict = function getDistrict(isSuccess, data) {
+    return {
+        type: types.GET_LIST_DISTRICT,
+        payload: {
+            isSuccess: isSuccess,
+            data: data
+        }
+    };
+};
+
+var getDistrictRequest = function getDistrictRequest(id) {
+    return function () {
+        var _ref3 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee3(dispatch) {
+            var result, error;
+            return _regenerator2.default.wrap(function _callee3$(_context3) {
+                while (1) {
+                    switch (_context3.prev = _context3.next) {
+                        case 0:
+                            dispatch(districtRequest());
+                            _context3.prev = 1;
+                            _context3.next = 4;
+                            return (0, _baseService.getDataByID)('/api/districts', id);
+
+                        case 4:
+                            result = _context3.sent;
+
+                            if (result) {
+                                dispatch(getDistrict(true, result));
+                            }
+                            _context3.next = 12;
+                            break;
+
+                        case 8:
+                            _context3.prev = 8;
+                            _context3.t0 = _context3['catch'](1);
+                            error = _context3.t0.response ? _context3.t0.response.data : {
+                                message: "Network Error!"
+                            };
+
+                            dispatch(getDistrict(false, error));
+
+                        case 12:
+                        case 'end':
+                            return _context3.stop();
+                    }
+                }
+            }, _callee3, undefined, [[1, 8]]);
+        }));
+
+        return function (_x3) {
+            return _ref3.apply(this, arguments);
+        };
+    }();
+};
+
+// Get district selected by fillter
+var getDistrictSelected = function getDistrictSelected(isSuccess, data) {
+    return {
+        type: types.GET_DISTRICT_SELECTED,
+        payload: {
+            isSuccess: isSuccess,
+            data: data
+        }
+    };
+};
+
+var getDistrictSelectedRequest = function getDistrictSelectedRequest(id) {
+    return function () {
+        var _ref4 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee4(dispatch) {
+            var result, error;
+            return _regenerator2.default.wrap(function _callee4$(_context4) {
+                while (1) {
+                    switch (_context4.prev = _context4.next) {
+                        case 0:
+                            _context4.prev = 0;
+                            _context4.next = 3;
+                            return _axios2.default.get('/api/districts/' + id + '/fillter');
+
+                        case 3:
+                            result = _context4.sent;
+
+                            if (result) {
+                                dispatch(getDistrictSelected(true, result));
+                            }
+                            _context4.next = 11;
+                            break;
+
+                        case 7:
+                            _context4.prev = 7;
+                            _context4.t0 = _context4['catch'](0);
+                            error = _context4.t0.response ? _context4.t0.response.data : {
+                                message: "Network Error!"
+                            };
+
+                            dispatch(getDistrictSelected(false, error));
+
+                        case 11:
+                        case 'end':
+                            return _context4.stop();
+                    }
+                }
+            }, _callee4, undefined, [[0, 7]]);
+        }));
+
+        return function (_x4) {
+            return _ref4.apply(this, arguments);
+        };
+    }();
+};
+
+var DistrictAction = exports.DistrictAction = {
+    getDistrictRequest: getDistrictRequest,
+    getDistrictSelectedRequest: getDistrictSelectedRequest
+
+    // --- MOTEL ACTION ---
+};var motelRequest = function motelRequest() {
+    return { type: types.MOTEL_REQUEST };
+};
+
+var getMotel = function getMotel(isSuccess, data) {
+    return {
+        type: types.GET_MOTEL_DATA,
+        payload: {
+            isSuccess: isSuccess,
+            data: data
+        }
+    };
+};
+
+var getMotelRequest = function getMotelRequest() {
+    return function () {
+        var _ref5 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee5(dispatch) {
+            var result, error;
+            return _regenerator2.default.wrap(function _callee5$(_context5) {
+                while (1) {
+                    switch (_context5.prev = _context5.next) {
+                        case 0:
+                            dispatch(motelRequest());
+                            _context5.prev = 1;
+                            _context5.next = 4;
+                            return (0, _baseService.getTakenData)('/api/motels');
+
+                        case 4:
+                            result = _context5.sent;
+
+                            if (result) {
+                                dispatch(getMotel(true, result));
+                            }
+                            _context5.next = 12;
+                            break;
+
+                        case 8:
+                            _context5.prev = 8;
+                            _context5.t0 = _context5['catch'](1);
+                            error = _context5.t0.response ? _context5.t0.response.data : {
+                                message: "Network Error!"
+                            };
+
+                            dispatch(getMotel(false, error));
+
+                        case 12:
+                        case 'end':
+                            return _context5.stop();
+                    }
+                }
+            }, _callee5, undefined, [[1, 8]]);
+        }));
+
+        return function (_x5) {
+            return _ref5.apply(this, arguments);
+        };
+    }();
+};
+
+var getMotelItem = function getMotelItem(isSuccess, data) {
+    return {
+        type: types.GET_MOTEL_ITEM_DATA,
+        payload: {
+            isSuccess: isSuccess,
+            data: data
+        }
+    };
+};
+
+var getMotelItemRequest = function getMotelItemRequest(id) {
+    return function () {
+        var _ref6 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee6(dispatch) {
+            var result, error;
+            return _regenerator2.default.wrap(function _callee6$(_context6) {
+                while (1) {
+                    switch (_context6.prev = _context6.next) {
+                        case 0:
+                            _context6.prev = 0;
+                            _context6.next = 3;
+                            return (0, _baseService.getDataByID)('/api/motels', id);
+
+                        case 3:
+                            result = _context6.sent;
+
+                            if (result) {
+                                dispatch(getMotelItem(true, result));
+                            }
+                            _context6.next = 11;
+                            break;
+
+                        case 7:
+                            _context6.prev = 7;
+                            _context6.t0 = _context6['catch'](0);
+                            error = _context6.t0.response ? _context6.t0.response.data : {
+                                message: "Network Error!"
+                            };
+
+                            dispatch(getMotelItem(false, error));
+
+                        case 11:
+                        case 'end':
+                            return _context6.stop();
+                    }
+                }
+            }, _callee6, undefined, [[0, 7]]);
+        }));
+
+        return function (_x6) {
+            return _ref6.apply(this, arguments);
+        };
+    }();
+};
+
+var onHoverItem = function onHoverItem(data) {
+    return {
+        type: types.ITEM_HOVER,
+        payload: {
+            data: data
+        }
+    };
+};
+
+var onMouseOutItem = function onMouseOutItem() {
+    return {
+        type: types.ON_MOUSE_OUT
+    };
+};
+
+var MotelAction = exports.MotelAction = {
+    getMotelRequest: getMotelRequest,
+    onHoverItem: onHoverItem,
+    onMouseOutItem: onMouseOutItem,
+    getMotelItemRequest: getMotelItemRequest
+};
+
+/***/ }),
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19777,7 +20182,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19789,12 +20194,12 @@ function _inheritsLoose(subClass, superClass) {
 }
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = connectAdvanced;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_esm_assertThisInitialized__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__babel_runtime_helpers_esm_extends__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(21);
@@ -19804,7 +20209,7 @@ function _inheritsLoose(subClass, superClass) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_is__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_is__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_is___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react_is__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Context__ = __webpack_require__(19);
 
@@ -19996,7 +20401,7 @@ _ref) {
 }
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20010,14 +20415,14 @@ if (false) {
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = wrapMapToPropsConstant;
 /* unused harmony export getDependsOnOwnProps */
 /* harmony export (immutable) */ __webpack_exports__["b"] = wrapMapToPropsFunc;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__ = __webpack_require__(37);
 
 function wrapMapToPropsConstant(getConstant) {
   return function initConstantSelector(dispatch, options) {
@@ -20084,13 +20489,13 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
 }
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = verifyPlainObject;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__isPlainObject__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__warning__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__warning__ = __webpack_require__(38);
 
 
 function verifyPlainObject(value, displayName, methodName) {
@@ -20100,7 +20505,7 @@ function verifyPlainObject(value, displayName, methodName) {
 }
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20131,7 +20536,7 @@ function warning(message) {
 }
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20197,7 +20602,7 @@ var isExtraneousPopstateEvent = function isExtraneousPopstateEvent(event) {
 };
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20314,18 +20719,18 @@ Link.contextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Link);
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Route__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_Route__ = __webpack_require__(42);
 // Written in this round about way for babel-transform-imports
 
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Route__["a" /* default */]);
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20479,7 +20884,7 @@ Route.childContextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (Route);
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isarray = __webpack_require__(107)
@@ -20911,11 +21316,11 @@ function pathToRegexp (path, keys, options) {
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_path_to_regexp__);
 
 
@@ -20956,7 +21361,7 @@ var generatePath = function generatePath() {
 /* harmony default export */ __webpack_exports__["a"] = (generatePath);
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
@@ -21027,7 +21432,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -21068,7 +21473,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21127,7 +21532,7 @@ module.exports = exports['default'];
 //# sourceMappingURL=label.js.map
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports) {
 
 /*
@@ -21209,7 +21614,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -21568,20 +21973,20 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(45);
+module.exports = __webpack_require__(46);
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(163);
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21599,7 +22004,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -21789,7 +22194,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21800,7 +22205,7 @@ var settle = __webpack_require__(167);
 var buildURL = __webpack_require__(169);
 var parseHeaders = __webpack_require__(170);
 var isURLSameOrigin = __webpack_require__(171);
-var createError = __webpack_require__(54);
+var createError = __webpack_require__(55);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(172);
 
 module.exports = function xhrAdapter(config) {
@@ -21976,7 +22381,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22001,7 +22406,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22013,7 +22418,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22037,411 +22442,6 @@ Cancel.prototype.__CANCEL__ = true;
 
 module.exports = Cancel;
 
-
-/***/ }),
-/* 57 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.MotelAction = exports.DistrictAction = exports.ProvinceAction = undefined;
-
-var _regenerator = __webpack_require__(49);
-
-var _regenerator2 = _interopRequireDefault(_regenerator);
-
-var _ActionType = __webpack_require__(13);
-
-var types = _interopRequireWildcard(_ActionType);
-
-var _baseService = __webpack_require__(29);
-
-var _axios = __webpack_require__(50);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
-var provinceRequest = function provinceRequest() {
-    return { type: types.PROVINCE_REQUEST };
-};
-
-// Get list province
-var getProvince = function getProvince(isSuccess, data) {
-    return {
-        type: types.GET_LIST_PROVINCE,
-        payload: {
-            isSuccess: isSuccess,
-            data: data
-        }
-    };
-};
-
-var getProvinceRequest = function getProvinceRequest() {
-    return function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee(dispatch) {
-            var result, error;
-            return _regenerator2.default.wrap(function _callee$(_context) {
-                while (1) {
-                    switch (_context.prev = _context.next) {
-                        case 0:
-                            dispatch(provinceRequest());
-                            _context.prev = 1;
-                            _context.next = 4;
-                            return (0, _baseService.getTakenData)('/api/provinces');
-
-                        case 4:
-                            result = _context.sent;
-
-                            if (result) {
-                                dispatch(getProvince(true, result));
-                            }
-                            _context.next = 12;
-                            break;
-
-                        case 8:
-                            _context.prev = 8;
-                            _context.t0 = _context['catch'](1);
-                            error = _context.t0.response ? _context.t0.response.data : {
-                                message: "Network Error!"
-                            };
-
-                            dispatch(getProvince(false, error));
-
-                        case 12:
-                        case 'end':
-                            return _context.stop();
-                    }
-                }
-            }, _callee, undefined, [[1, 8]]);
-        }));
-
-        return function (_x) {
-            return _ref.apply(this, arguments);
-        };
-    }();
-};
-// Get province selected by fillter
-var getProvinceSelected = function getProvinceSelected(isSuccess, data) {
-    return {
-        type: types.GET_PROVINCE_SELECTED,
-        payload: {
-            isSuccess: isSuccess,
-            data: data
-        }
-    };
-};
-
-var getProvinceSelectedRequest = function getProvinceSelectedRequest(id) {
-    return function () {
-        var _ref2 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee2(dispatch) {
-            var result, error;
-            return _regenerator2.default.wrap(function _callee2$(_context2) {
-                while (1) {
-                    switch (_context2.prev = _context2.next) {
-                        case 0:
-                            _context2.prev = 0;
-                            _context2.next = 3;
-                            return (0, _baseService.getDataByID)('/api/provinces', id);
-
-                        case 3:
-                            result = _context2.sent;
-
-                            if (result) {
-                                dispatch(getProvinceSelected(true, result));
-                            }
-                            _context2.next = 11;
-                            break;
-
-                        case 7:
-                            _context2.prev = 7;
-                            _context2.t0 = _context2['catch'](0);
-                            error = _context2.t0.response ? _context2.t0.response.data : {
-                                message: "Network Error!"
-                            };
-
-                            dispatch(getProvinceSelected(false, error));
-
-                        case 11:
-                        case 'end':
-                            return _context2.stop();
-                    }
-                }
-            }, _callee2, undefined, [[0, 7]]);
-        }));
-
-        return function (_x2) {
-            return _ref2.apply(this, arguments);
-        };
-    }();
-};
-
-var ProvinceAction = exports.ProvinceAction = {
-    getProvinceRequest: getProvinceRequest,
-    getProvinceSelectedRequest: getProvinceSelectedRequest
-
-    // --- DISTRICT ACTION ---
-};var districtRequest = function districtRequest() {
-    return { type: types.DISTRICT_REQUEST };
-};
-
-var getDistrict = function getDistrict(isSuccess, data) {
-    return {
-        type: types.GET_LIST_DISTRICT,
-        payload: {
-            isSuccess: isSuccess,
-            data: data
-        }
-    };
-};
-
-var getDistrictRequest = function getDistrictRequest(id) {
-    return function () {
-        var _ref3 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee3(dispatch) {
-            var result, error;
-            return _regenerator2.default.wrap(function _callee3$(_context3) {
-                while (1) {
-                    switch (_context3.prev = _context3.next) {
-                        case 0:
-                            dispatch(districtRequest());
-                            _context3.prev = 1;
-                            _context3.next = 4;
-                            return (0, _baseService.getDataByID)('/api/districts', id);
-
-                        case 4:
-                            result = _context3.sent;
-
-                            if (result) {
-                                dispatch(getDistrict(true, result));
-                            }
-                            _context3.next = 12;
-                            break;
-
-                        case 8:
-                            _context3.prev = 8;
-                            _context3.t0 = _context3['catch'](1);
-                            error = _context3.t0.response ? _context3.t0.response.data : {
-                                message: "Network Error!"
-                            };
-
-                            dispatch(getDistrict(false, error));
-
-                        case 12:
-                        case 'end':
-                            return _context3.stop();
-                    }
-                }
-            }, _callee3, undefined, [[1, 8]]);
-        }));
-
-        return function (_x3) {
-            return _ref3.apply(this, arguments);
-        };
-    }();
-};
-
-// Get district selected by fillter
-var getDistrictSelected = function getDistrictSelected(isSuccess, data) {
-    return {
-        type: types.GET_DISTRICT_SELECTED,
-        payload: {
-            isSuccess: isSuccess,
-            data: data
-        }
-    };
-};
-
-var getDistrictSelectedRequest = function getDistrictSelectedRequest(id) {
-    return function () {
-        var _ref4 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee4(dispatch) {
-            var result, error;
-            return _regenerator2.default.wrap(function _callee4$(_context4) {
-                while (1) {
-                    switch (_context4.prev = _context4.next) {
-                        case 0:
-                            _context4.prev = 0;
-                            _context4.next = 3;
-                            return _axios2.default.get('/api/districts/' + id + '/fillter');
-
-                        case 3:
-                            result = _context4.sent;
-
-                            if (result) {
-                                dispatch(getDistrictSelected(true, result));
-                            }
-                            _context4.next = 11;
-                            break;
-
-                        case 7:
-                            _context4.prev = 7;
-                            _context4.t0 = _context4['catch'](0);
-                            error = _context4.t0.response ? _context4.t0.response.data : {
-                                message: "Network Error!"
-                            };
-
-                            dispatch(getDistrictSelected(false, error));
-
-                        case 11:
-                        case 'end':
-                            return _context4.stop();
-                    }
-                }
-            }, _callee4, undefined, [[0, 7]]);
-        }));
-
-        return function (_x4) {
-            return _ref4.apply(this, arguments);
-        };
-    }();
-};
-
-var DistrictAction = exports.DistrictAction = {
-    getDistrictRequest: getDistrictRequest,
-    getDistrictSelectedRequest: getDistrictSelectedRequest
-
-    // --- MOTEL ACTION ---
-};var motelRequest = function motelRequest() {
-    return { type: types.MOTEL_REQUEST };
-};
-
-var getMotel = function getMotel(isSuccess, data) {
-    return {
-        type: types.GET_MOTEL_DATA,
-        payload: {
-            isSuccess: isSuccess,
-            data: data
-        }
-    };
-};
-
-var getMotelRequest = function getMotelRequest() {
-    return function () {
-        var _ref5 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee5(dispatch) {
-            var result, error;
-            return _regenerator2.default.wrap(function _callee5$(_context5) {
-                while (1) {
-                    switch (_context5.prev = _context5.next) {
-                        case 0:
-                            dispatch(motelRequest());
-                            _context5.prev = 1;
-                            _context5.next = 4;
-                            return (0, _baseService.getTakenData)('/api/motels');
-
-                        case 4:
-                            result = _context5.sent;
-
-                            if (result) {
-                                dispatch(getMotel(true, result));
-                            }
-                            _context5.next = 12;
-                            break;
-
-                        case 8:
-                            _context5.prev = 8;
-                            _context5.t0 = _context5['catch'](1);
-                            error = _context5.t0.response ? _context5.t0.response.data : {
-                                message: "Network Error!"
-                            };
-
-                            dispatch(getMotel(false, error));
-
-                        case 12:
-                        case 'end':
-                            return _context5.stop();
-                    }
-                }
-            }, _callee5, undefined, [[1, 8]]);
-        }));
-
-        return function (_x5) {
-            return _ref5.apply(this, arguments);
-        };
-    }();
-};
-
-var getMotelItem = function getMotelItem(isSuccess, data) {
-    return {
-        type: types.GET_MOTEL_ITEM_DATA,
-        payload: {
-            isSuccess: isSuccess,
-            data: data
-        }
-    };
-};
-
-var getMotelItemRequest = function getMotelItemRequest(id) {
-    return function () {
-        var _ref6 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee6(dispatch) {
-            var result, error;
-            return _regenerator2.default.wrap(function _callee6$(_context6) {
-                while (1) {
-                    switch (_context6.prev = _context6.next) {
-                        case 0:
-                            _context6.prev = 0;
-                            _context6.next = 3;
-                            return (0, _baseService.getDataByID)('/api/motels', id);
-
-                        case 3:
-                            result = _context6.sent;
-
-                            if (result) {
-                                dispatch(getMotelItem(true, result));
-                            }
-                            _context6.next = 11;
-                            break;
-
-                        case 7:
-                            _context6.prev = 7;
-                            _context6.t0 = _context6['catch'](0);
-                            error = _context6.t0.response ? _context6.t0.response.data : {
-                                message: "Network Error!"
-                            };
-
-                            dispatch(getMotelItem(false, error));
-
-                        case 11:
-                        case 'end':
-                            return _context6.stop();
-                    }
-                }
-            }, _callee6, undefined, [[0, 7]]);
-        }));
-
-        return function (_x6) {
-            return _ref6.apply(this, arguments);
-        };
-    }();
-};
-
-var onHoverItem = function onHoverItem(data) {
-    return {
-        type: types.ITEM_HOVER,
-        payload: {
-            data: data
-        }
-    };
-};
-
-var onMouseOutItem = function onMouseOutItem() {
-    return {
-        type: types.ON_MOUSE_OUT
-    };
-};
-
-var MotelAction = exports.MotelAction = {
-    getMotelRequest: getMotelRequest,
-    onHoverItem: onHoverItem,
-    onMouseOutItem: onMouseOutItem,
-    getMotelItemRequest: getMotelItemRequest
-};
 
 /***/ }),
 /* 58 */
@@ -24037,13 +24037,13 @@ var _reactDom = __webpack_require__(4);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactRedux = __webpack_require__(18);
+var _reactRedux = __webpack_require__(12);
 
 var _store = __webpack_require__(90);
 
 var _store2 = _interopRequireDefault(_store);
 
-var _reactRouterDom = __webpack_require__(14);
+var _reactRouterDom = __webpack_require__(15);
 
 var _Home = __webpack_require__(121);
 
@@ -46748,7 +46748,7 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_inheritsLoose__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(1);
@@ -46864,7 +46864,7 @@ Provider.propTypes = {
 
 var assign = __webpack_require__(10);
 
-var ReactPropTypesSecret = __webpack_require__(31);
+var ReactPropTypesSecret = __webpack_require__(32);
 var checkPropTypes = __webpack_require__(11);
 
 var printWarning = function() {};
@@ -47435,7 +47435,7 @@ function _assertThisInitialized(self) {
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
  */
-var ReactIs = __webpack_require__(34);
+var ReactIs = __webpack_require__(35);
 var REACT_STATICS = {
     childContextTypes: true,
     contextType: true,
@@ -47760,7 +47760,7 @@ exports.isSuspense = isSuspense;
 /* unused harmony export createConnect */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_extends__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__babel_runtime_helpers_esm_objectWithoutPropertiesLoose__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_connectAdvanced__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_connectAdvanced__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_shallowEqual__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mapDispatchToProps__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mapStateToProps__ = __webpack_require__(86);
@@ -47909,8 +47909,8 @@ function shallowEqual(objA, objB) {
 /* unused harmony export whenMapDispatchToPropsIsFunction */
 /* unused harmony export whenMapDispatchToPropsIsMissing */
 /* unused harmony export whenMapDispatchToPropsIsObject */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wrapMapToProps__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wrapMapToProps__ = __webpack_require__(36);
 
 
 function whenMapDispatchToPropsIsFunction(mapDispatchToProps) {
@@ -48043,7 +48043,7 @@ function isPlainObject(obj) {
 "use strict";
 /* unused harmony export whenMapStateToPropsIsFunction */
 /* unused harmony export whenMapStateToPropsIsMissing */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__wrapMapToProps__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__wrapMapToProps__ = __webpack_require__(36);
 
 function whenMapStateToPropsIsFunction(mapStateToProps) {
   return typeof mapStateToProps === 'function' ? Object(__WEBPACK_IMPORTED_MODULE_0__wrapMapToProps__["b" /* wrapMapToPropsFunc */])(mapStateToProps, 'mapStateToProps') : undefined;
@@ -48065,7 +48065,7 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
 /* unused harmony export whenMergePropsIsFunction */
 /* unused harmony export whenMergePropsIsOmitted */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_helpers_esm_extends__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_verifyPlainObject__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_verifyPlainObject__ = __webpack_require__(37);
 
 
 function defaultMergeProps(stateProps, dispatchProps, ownProps) {
@@ -48207,7 +48207,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = verifySubselectors;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_warning__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_warning__ = __webpack_require__(38);
 
 
 function verify(selector, methodName, displayName) {
@@ -48247,7 +48247,7 @@ var _index = __webpack_require__(93);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _redux = __webpack_require__(12);
+var _redux = __webpack_require__(13);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -48260,7 +48260,7 @@ exports.default = (0, _redux.createStore)(_index2.default, (0, _reduxDevtoolsExt
 "use strict";
 
 
-var compose = __webpack_require__(12).compose;
+var compose = __webpack_require__(13).compose;
 
 exports.__esModule = true;
 exports.composeWithDevTools = (
@@ -48318,7 +48318,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _redux = __webpack_require__(12);
+var _redux = __webpack_require__(13);
 
 var _Motel = __webpack_require__(94);
 
@@ -48355,7 +48355,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _ActionType = __webpack_require__(13);
+var _ActionType = __webpack_require__(14);
 
 var types = _interopRequireWildcard(_ActionType);
 
@@ -48442,7 +48442,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _ActionType = __webpack_require__(13);
+var _ActionType = __webpack_require__(14);
 
 var types = _interopRequireWildcard(_ActionType);
 
@@ -48519,7 +48519,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _ActionType = __webpack_require__(13);
+var _ActionType = __webpack_require__(14);
 
 var types = _interopRequireWildcard(_ActionType);
 
@@ -48655,14 +48655,14 @@ BrowserRouter.propTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(39);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -49079,14 +49079,14 @@ function valueEqual(a, b) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(39);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 
@@ -49400,10 +49400,10 @@ var createHashHistory = function createHashHistory() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(22);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
@@ -49714,8 +49714,8 @@ MemoryRouter.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Route__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Link__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Route__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Link__ = __webpack_require__(40);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -49927,7 +49927,7 @@ Prompt.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__generatePath__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__generatePath__ = __webpack_require__(44);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -50327,7 +50327,7 @@ Switch.propTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_generatePath__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react_router_es_generatePath__ = __webpack_require__(44);
 // Written in this round about way for babel-transform-imports
 
 
@@ -50366,7 +50366,7 @@ Switch.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(42);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -50998,8 +50998,6 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
@@ -51022,11 +51020,7 @@ var _Config = __webpack_require__(26);
 
 var constant = _interopRequireWildcard(_Config);
 
-var _reactRedux = __webpack_require__(18);
-
-var _index = __webpack_require__(57);
-
-var _reactRouterDom = __webpack_require__(14);
+var _reactRouterDom = __webpack_require__(15);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -51048,25 +51042,6 @@ var HomePage = function (_Component) {
 
         _this.handleWindowSizeChange = function () {
             _this.setState({ width: window.innerWidth });
-        };
-
-        _this.onChangeProvince = function (data) {
-            if (data) {
-                _this.props.getDistrict(data);
-                _this.props.getProvinceSelected(data);
-            }
-        };
-
-        _this.onChangeDistrict = function (data) {
-            if (data) {
-                _this.props.getDistrictSelected(data);
-            }
-        };
-
-        _this.onItemSelected = function (data) {
-            if (data) {
-                _this.props.getItemMotel(data);
-            }
         };
 
         _this.state = {
@@ -51096,22 +51071,13 @@ var HomePage = function (_Component) {
 
         value: function componentDidMount() {
             window.scrollTo(0, 0);
-            this.props.getProvince();
-            this.props.getMotel();
         }
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
             var width = this.state.width;
 
             var isMobile = width <= 767;
-            var _props = this.props,
-                Province = _props.Province,
-                District = _props.District,
-                Motel = _props.Motel;
-
 
             if (isMobile) {
                 var View = this.props.View;
@@ -51136,28 +51102,11 @@ var HomePage = function (_Component) {
                                             _react2.default.createElement(
                                                 _reactRouterDom.Switch,
                                                 null,
-                                                _react2.default.createElement(_reactRouterDom.Route, {
-                                                    path: '/',
-                                                    exact: true,
-                                                    component: function component(props) {
-                                                        return _react2.default.createElement(_HomeFillter2.default, _extends({}, props, {
-                                                            Province: Province,
-                                                            onProvince: _this2.onChangeProvince,
-                                                            onDistrict: _this2.onChangeDistrict,
-                                                            District: District,
-                                                            Motel: Motel,
-                                                            selected: {
-                                                                province: Province.selected,
-                                                                district: District.selected
-                                                            } }));
+                                                _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: function component() {
+                                                        return _react2.default.createElement(_HomeFillter2.default, null);
                                                     } }),
-                                                _react2.default.createElement(_reactRouterDom.Route, {
-                                                    path: '/view/:id/:slug.html',
-                                                    render: function render(props) {
-                                                        return _react2.default.createElement(_Preview2.default, _extends({}, props, {
-                                                            itemSelected: _this2.onItemSelected,
-                                                            item: Motel.item_selected,
-                                                            isLoading: Motel.isLoading }));
+                                                _react2.default.createElement(_reactRouterDom.Route, { path: '/view/:id/:slug.html', component: function component() {
+                                                        return _react2.default.createElement(_Preview2.default, null);
                                                     } })
                                             )
                                         )
@@ -51178,11 +51127,7 @@ var HomePage = function (_Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'home_map' },
-                                        _react2.default.createElement(_HomeMap2.default, {
-                                            Motel: Motel,
-                                            Province: Province.selected,
-                                            District: District.selected,
-                                            Marker: this.onMapMarker })
+                                        _react2.default.createElement(_HomeMap2.default, null)
                                     )
                                 )
                             )
@@ -51200,11 +51145,7 @@ var HomePage = function (_Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'home_map' },
-                            _react2.default.createElement(_HomeMap2.default, {
-                                Motel: Motel,
-                                Province: Province.selected,
-                                District: District.selected,
-                                Marker: this.onMapMarker })
+                            _react2.default.createElement(_HomeMap2.default, null)
                         )
                     ),
                     _react2.default.createElement(
@@ -51219,30 +51160,12 @@ var HomePage = function (_Component) {
                                 _react2.default.createElement(
                                     _reactRouterDom.Switch,
                                     null,
-                                    _react2.default.createElement(_reactRouterDom.Route, {
-                                        path: '/',
-                                        exact: true,
-                                        component: function component(props) {
-                                            return _react2.default.createElement(_HomeFillter2.default, _extends({}, props, {
-                                                Province: Province,
-                                                onProvince: _this2.onChangeProvince,
-                                                onDistrict: _this2.onChangeDistrict,
-                                                District: District,
-                                                Motel: Motel,
-                                                selected: {
-                                                    province: Province.selected,
-                                                    district: District.selected
-                                                } }));
+                                    _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: function component() {
+                                            return _react2.default.createElement(_HomeFillter2.default, null);
                                         } }),
-                                    _react2.default.createElement(_reactRouterDom.Route, {
-                                        path: '/view/:id/:slug.html',
-                                        render: function render(props) {
-                                            return _react2.default.createElement(_Preview2.default, _extends({}, props, {
-                                                itemSelected: _this2.onItemSelected,
-                                                item: Motel.item_selected,
-                                                isLoading: Motel.isLoading }));
-                                        }
-                                    })
+                                    _react2.default.createElement(_reactRouterDom.Route, { path: '/view/:id/:slug.html', component: function component() {
+                                            return _react2.default.createElement(_Preview2.default, null);
+                                        } })
                                 )
                             )
                         )
@@ -51255,33 +51178,7 @@ var HomePage = function (_Component) {
     return HomePage;
 }(_react.Component);
 
-var mapStateToProps = function mapStateToProps(state) {
-    return { Province: state.Province, District: state.District, Motel: state.Motel };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch, props) {
-    return {
-        getProvince: function getProvince() {
-            return dispatch(_index.ProvinceAction.getProvinceRequest());
-        },
-        getDistrict: function getDistrict(id) {
-            return dispatch(_index.DistrictAction.getDistrictRequest(id));
-        },
-        getMotel: function getMotel() {
-            return dispatch(_index.MotelAction.getMotelRequest());
-        },
-        getProvinceSelected: function getProvinceSelected(id) {
-            return dispatch(_index.ProvinceAction.getProvinceSelectedRequest(id));
-        },
-        getDistrictSelected: function getDistrictSelected(id) {
-            return dispatch(_index.DistrictAction.getDistrictSelectedRequest(id));
-        },
-        getItemMotel: function getItemMotel(id) {
-            return dispatch(_index.MotelAction.getMotelItemRequest(id));
-        }
-    };
-};
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomePage);
+exports.default = HomePage;
 
 /***/ }),
 /* 125 */
@@ -51307,6 +51204,10 @@ var _reactGeocode = __webpack_require__(139);
 var _reactGeocode2 = _interopRequireDefault(_reactGeocode);
 
 var _lodash = __webpack_require__(27);
+
+var _index = __webpack_require__(31);
+
+var _reactRedux = __webpack_require__(12);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -51355,99 +51256,13 @@ var HomeMap = function (_Component) {
     _createClass(HomeMap, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var _this2 = this;
-
             _reactGeocode2.default.setApiKey("AIzaSyAiQX1yfcvHCeM98e6asi-Wi-Y_H4-V1Qw");
-
-            var _props = this.props,
-                Province = _props.Province,
-                District = _props.District;
-
-
-            if (!(0, _lodash.isEmpty)(Province)) {
-                if ((0, _lodash.isEmpty)(District)) {
-                    _reactGeocode2.default.fromAddress(Province._name).then(function (response) {
-                        var _response$results$0$g = response.results[0].geometry.location,
-                            lat = _response$results$0$g.lat,
-                            lng = _response$results$0$g.lng;
-
-                        _this2.setState({
-                            center: {
-                                lat: lat,
-                                lng: lng
-                            },
-                            zoom: 14
-                        });
-                    }, function (error) {
-                        console.error(error);
-                    });
-                } else {
-                    _reactGeocode2.default.fromAddress(District._prefix + ' ' + District._name + ', ' + Province._name).then(function (response) {
-                        var _response$results$0$g2 = response.results[0].geometry.location,
-                            lat = _response$results$0$g2.lat,
-                            lng = _response$results$0$g2.lng;
-
-                        _this2.setState({
-                            center: {
-                                lat: lat,
-                                lng: lng
-                            },
-                            zoom: 14
-                        });
-                    }, function (error) {
-                        console.error(error);
-                    });
-                }
-            }
-        }
-    }, {
-        key: 'componentWillReceiveProps',
-        value: function componentWillReceiveProps(next) {
-            var _this3 = this;
-
-            if (!(0, _lodash.isEmpty)(next.Province)) {
-                if ((0, _lodash.isEmpty)(next.District)) {
-                    _reactGeocode2.default.fromAddress(next.Province._name).then(function (response) {
-                        var _response$results$0$g3 = response.results[0].geometry.location,
-                            lat = _response$results$0$g3.lat,
-                            lng = _response$results$0$g3.lng;
-
-                        _this3.setState({
-                            center: {
-                                lat: lat,
-                                lng: lng
-                            },
-                            zoom: 14
-                        });
-                    }, function (error) {
-                        console.error(error);
-                    });
-                } else {
-                    var District = next.District,
-                        Province = next.Province;
-
-                    _reactGeocode2.default.fromAddress(District._prefix + ' ' + District._name + ', ' + Province._name).then(function (response) {
-                        var _response$results$0$g4 = response.results[0].geometry.location,
-                            lat = _response$results$0$g4.lat,
-                            lng = _response$results$0$g4.lng;
-
-                        _this3.setState({
-                            center: {
-                                lat: lat,
-                                lng: lng
-                            },
-                            zoom: 14
-                        });
-                    }, function (error) {
-                        console.error(error);
-                    });
-                }
-            }
+            this.props.getMotel();
         }
     }, {
         key: 'render',
         value: function render() {
-            var _this4 = this;
+            var _this2 = this;
 
             var Motel = this.props.Motel;
 
@@ -51472,8 +51287,8 @@ var HomeMap = function (_Component) {
                         index: index,
                         icon: icon,
                         animation: item.id === Motel.item_hover.id ? 1 : 0,
-                        onMouseover: _this4.onMouseover,
-                        onMouseout: _this4.onMouseout,
+                        onMouseover: _this2.onMouseover,
+                        onMouseout: _this2.onMouseout,
                         title: 'The marker`s title will appear as a tooltip.',
                         position: {
                             lat: item.latitude,
@@ -51488,7 +51303,34 @@ var HomeMap = function (_Component) {
     return HomeMap;
 }(_react.Component);
 
-exports.default = (0, _googleMapsReact.GoogleApiWrapper)({ apiKey: 'AIzaSyAiQX1yfcvHCeM98e6asi-Wi-Y_H4-V1Qw' })(HomeMap);
+var mapStateToProps = function mapStateToProps(state) {
+    return { Province: state.Province, District: state.District, Motel: state.Motel };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch, props) {
+    return {
+        getProvince: function getProvince() {
+            return dispatch(_index.ProvinceAction.getProvinceRequest());
+        },
+        getDistrict: function getDistrict(id) {
+            return dispatch(_index.DistrictAction.getDistrictRequest(id));
+        },
+        getMotel: function getMotel() {
+            return dispatch(_index.MotelAction.getMotelRequest());
+        },
+        getProvinceSelected: function getProvinceSelected(id) {
+            return dispatch(_index.ProvinceAction.getProvinceSelectedRequest(id));
+        },
+        getDistrictSelected: function getDistrictSelected(id) {
+            return dispatch(_index.DistrictAction.getDistrictSelectedRequest(id));
+        },
+        getItemMotel: function getItemMotel(id) {
+            return dispatch(_index.MotelAction.getMotelItemRequest(id));
+        }
+    };
+};
+
+exports.default = (0, _googleMapsReact.GoogleApiWrapper)({ apiKey: 'AIzaSyAiQX1yfcvHCeM98e6asi-Wi-Y_H4-V1Qw' })((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeMap));
 
 /***/ }),
 /* 126 */
@@ -56772,7 +56614,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
   if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports, __webpack_require__(0), __webpack_require__(1), __webpack_require__(44), __webpack_require__(9)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports, __webpack_require__(0), __webpack_require__(1), __webpack_require__(45), __webpack_require__(9)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -57063,7 +56905,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
   if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports, __webpack_require__(0), __webpack_require__(1), __webpack_require__(44), __webpack_require__(9)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports, __webpack_require__(0), __webpack_require__(1), __webpack_require__(45), __webpack_require__(9)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -57299,7 +57141,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-var regeneratorRuntime=__webpack_require__(45);var handleUrl=function(){var a=_asyncToGenerator(regeneratorRuntime.mark(function b(c){var d,e;return regeneratorRuntime.wrap(function(g){for(;;)switch(g.prev=g.next){case 0:return g.next=2,fetch(c).catch(function(){return Promise.reject(new Error("Error fetching data"))});case 2:return d=g.sent,g.next=5,d.json().catch(function(){return log("Error parsing server response"),Promise.reject(new Error("Error parsing server response"))});case 5:if(e=g.sent,"OK"!==e.status){g.next=9;break}return log(e),g.abrupt("return",e);case 9:return log("Server returned status code "+e.status,!0),g.abrupt("return",Promise.reject(new Error("Server returned status code "+e.status)));case 11:case"end":return g.stop();}},b,this)}));return function(){return a.apply(this,arguments)}}();Object.defineProperty(exports,"__esModule",{value:!0});function _asyncToGenerator(a){return function(){var b=a.apply(this,arguments);return new Promise(function(c,d){function e(f,g){try{var h=b[f](g),i=h.value}catch(j){return void d(j)}return h.done?void c(i):Promise.resolve(i).then(function(j){e("next",j)},function(j){e("throw",j)})}return e("next")})}}var DEBUG=!1,API_KEY=null,GOOGLE_API="https://maps.google.com/maps/api/geocode/json";function log(a){var b=1<arguments.length&&arguments[1]!==void 0&&arguments[1];DEBUG&&(b?console.warn(a):console.log(a))}exports.default={setApiKey:function setApiKey(a){API_KEY=a},enableDebug:function enableDebug(){var a=0<arguments.length&&arguments[0]!==void 0?arguments[0]:!0;DEBUG=a},fromLatLng:function fromLatLng(a,b,c){var d=this;return _asyncToGenerator(regeneratorRuntime.mark(function e(){var f,g;return regeneratorRuntime.wrap(function(i){for(;;)switch(i.prev=i.next){case 0:if(a&&b){i.next=3;break}return log("Provided coordinates are invalid",!0),i.abrupt("return",Promise.reject(new Error("Provided coordinates are invalid")));case 3:return f=a+","+b,g=GOOGLE_API+"?latlng="+encodeURI(f),(c||API_KEY)&&(API_KEY=c||API_KEY,g+="&key="+API_KEY),i.abrupt("return",handleUrl(g));case 7:case"end":return i.stop();}},e,d)}))()},fromAddress:function fromAddress(a,b){var c=this;return _asyncToGenerator(regeneratorRuntime.mark(function d(){var e;return regeneratorRuntime.wrap(function(g){for(;;)switch(g.prev=g.next){case 0:if(a){g.next=3;break}return log("Provided address is invalid",!0),g.abrupt("return",Promise.reject(new Error("Provided address is invalid")));case 3:return e=GOOGLE_API+"?address="+encodeURI(a),(b||API_KEY)&&(API_KEY=b||API_KEY,e+="&key="+API_KEY),g.abrupt("return",handleUrl(e));case 6:case"end":return g.stop();}},d,c)}))()}};
+var regeneratorRuntime=__webpack_require__(46);var handleUrl=function(){var a=_asyncToGenerator(regeneratorRuntime.mark(function b(c){var d,e;return regeneratorRuntime.wrap(function(g){for(;;)switch(g.prev=g.next){case 0:return g.next=2,fetch(c).catch(function(){return Promise.reject(new Error("Error fetching data"))});case 2:return d=g.sent,g.next=5,d.json().catch(function(){return log("Error parsing server response"),Promise.reject(new Error("Error parsing server response"))});case 5:if(e=g.sent,"OK"!==e.status){g.next=9;break}return log(e),g.abrupt("return",e);case 9:return log("Server returned status code "+e.status,!0),g.abrupt("return",Promise.reject(new Error("Server returned status code "+e.status)));case 11:case"end":return g.stop();}},b,this)}));return function(){return a.apply(this,arguments)}}();Object.defineProperty(exports,"__esModule",{value:!0});function _asyncToGenerator(a){return function(){var b=a.apply(this,arguments);return new Promise(function(c,d){function e(f,g){try{var h=b[f](g),i=h.value}catch(j){return void d(j)}return h.done?void c(i):Promise.resolve(i).then(function(j){e("next",j)},function(j){e("throw",j)})}return e("next")})}}var DEBUG=!1,API_KEY=null,GOOGLE_API="https://maps.google.com/maps/api/geocode/json";function log(a){var b=1<arguments.length&&arguments[1]!==void 0&&arguments[1];DEBUG&&(b?console.warn(a):console.log(a))}exports.default={setApiKey:function setApiKey(a){API_KEY=a},enableDebug:function enableDebug(){var a=0<arguments.length&&arguments[0]!==void 0?arguments[0]:!0;DEBUG=a},fromLatLng:function fromLatLng(a,b,c){var d=this;return _asyncToGenerator(regeneratorRuntime.mark(function e(){var f,g;return regeneratorRuntime.wrap(function(i){for(;;)switch(i.prev=i.next){case 0:if(a&&b){i.next=3;break}return log("Provided coordinates are invalid",!0),i.abrupt("return",Promise.reject(new Error("Provided coordinates are invalid")));case 3:return f=a+","+b,g=GOOGLE_API+"?latlng="+encodeURI(f),(c||API_KEY)&&(API_KEY=c||API_KEY,g+="&key="+API_KEY),i.abrupt("return",handleUrl(g));case 7:case"end":return i.stop();}},e,d)}))()},fromAddress:function fromAddress(a,b){var c=this;return _asyncToGenerator(regeneratorRuntime.mark(function d(){var e;return regeneratorRuntime.wrap(function(g){for(;;)switch(g.prev=g.next){case 0:if(a){g.next=3;break}return log("Provided address is invalid",!0),g.abrupt("return",Promise.reject(new Error("Provided address is invalid")));case 3:return e=GOOGLE_API+"?address="+encodeURI(a),(b||API_KEY)&&(API_KEY=b||API_KEY,e+="&key="+API_KEY),g.abrupt("return",handleUrl(e));case 6:case"end":return g.stop();}},d,c)}))()}};
 
 /***/ }),
 /* 140 */
@@ -58095,6 +57937,10 @@ var _reactSelect2 = _interopRequireDefault(_reactSelect);
 
 var _lodash = __webpack_require__(27);
 
+var _reactRedux = __webpack_require__(12);
+
+var _index = __webpack_require__(31);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -58150,20 +57996,23 @@ var HomeFillter = function (_Component) {
     _createClass(HomeFillter, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var selected = this.props.selected;
+            this.props.getDistrict();
+            this.props.getProvince();
 
-            if (!(0, _lodash.isEmpty)(selected.province)) {
-                if ((0, _lodash.isEmpty)(selected.district)) {
-                    this.setState({
-                        province: selected.province.id
-                    });
-                } else {
-                    this.setState({
-                        province: selected.province.id,
-                        district: selected.district.id
-                    });
-                }
-            }
+            // let {selected} = this.props;
+            // if(!isEmpty(selected.province)){
+            //     if(isEmpty(selected.district)){
+            //         this.setState({
+            //             province: selected.province.id
+            //         });
+            //     }
+            //     else{
+            //         this.setState({
+            //             province: selected.province.id,
+            //             district:selected.district.id
+            //         });
+            //     }
+            // }
         }
     }, {
         key: 'render',
@@ -58388,7 +58237,34 @@ var HomeFillter = function (_Component) {
     return HomeFillter;
 }(_react.Component);
 
-exports.default = HomeFillter;
+var mapStateToProps = function mapStateToProps(state) {
+    return { Province: state.Province, District: state.District, Motel: state.Motel };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch, props) {
+    return {
+        getProvince: function getProvince() {
+            return dispatch(_index.ProvinceAction.getProvinceRequest());
+        },
+        getDistrict: function getDistrict(id) {
+            return dispatch(_index.DistrictAction.getDistrictRequest(id));
+        },
+        getMotel: function getMotel() {
+            return dispatch(_index.MotelAction.getMotelRequest());
+        },
+        getProvinceSelected: function getProvinceSelected(id) {
+            return dispatch(_index.ProvinceAction.getProvinceSelectedRequest(id));
+        },
+        getDistrictSelected: function getDistrictSelected(id) {
+            return dispatch(_index.DistrictAction.getDistrictSelectedRequest(id));
+        },
+        getItemMotel: function getItemMotel(id) {
+            return dispatch(_index.MotelAction.getMotelItemRequest(id));
+        }
+    };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeFillter);
 
 /***/ }),
 /* 143 */
@@ -58490,7 +58366,7 @@ var _defaultClassNames = __webpack_require__(153);
 
 var _defaultClassNames2 = _interopRequireDefault(_defaultClassNames);
 
-var _label = __webpack_require__(46);
+var _label = __webpack_require__(47);
 
 var _label2 = _interopRequireDefault(_label);
 
@@ -58510,7 +58386,7 @@ var _track = __webpack_require__(157);
 
 var _track2 = _interopRequireDefault(_track);
 
-var _utils = __webpack_require__(17);
+var _utils = __webpack_require__(18);
 
 var _keyCodes = __webpack_require__(158);
 
@@ -59383,7 +59259,7 @@ exports.getPositionsFromValues = getPositionsFromValues;
 exports.getPositionFromEvent = getPositionFromEvent;
 exports.getStepValueFromValue = getStepValueFromValue;
 
-var _utils = __webpack_require__(17);
+var _utils = __webpack_require__(18);
 
 /**
  * Convert a point into a percentage value
@@ -59746,7 +59622,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = rangePropType;
 
-var _utils = __webpack_require__(17);
+var _utils = __webpack_require__(18);
 
 /**
  * @ignore
@@ -59781,7 +59657,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = valuePropType;
 
-var _utils = __webpack_require__(17);
+var _utils = __webpack_require__(18);
 
 /**
  * @ignore
@@ -59837,7 +59713,7 @@ var _autobindDecorator = __webpack_require__(28);
 
 var _autobindDecorator2 = _interopRequireDefault(_autobindDecorator);
 
-var _label = __webpack_require__(46);
+var _label = __webpack_require__(47);
 
 var _label2 = _interopRequireDefault(_label);
 
@@ -60553,7 +60429,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(48)(content, options);
+var update = __webpack_require__(49)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -60573,7 +60449,7 @@ if(false) {
 /* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(47)(false);
+exports = module.exports = __webpack_require__(48)(false);
 // imports
 
 
@@ -60697,11 +60573,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _baseService = __webpack_require__(29);
 
-var _reactRedux = __webpack_require__(18);
+var _reactRedux = __webpack_require__(12);
 
-var _index = __webpack_require__(57);
+var _index = __webpack_require__(31);
 
-var _reactRouterDom = __webpack_require__(14);
+var _reactRouterDom = __webpack_require__(15);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60727,7 +60603,6 @@ var ItemResult = function (_Component) {
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ItemResult.__proto__ || Object.getPrototypeOf(ItemResult)).call.apply(_ref, [this].concat(args))), _this), _this.onShowView = function (item) {
             _this.props.history.push('/view/' + item.id + '/' + (0, _baseService.to_slug)(item.title) + '.html');
-            // this.props.getItemData(item.id);
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -60822,7 +60697,7 @@ exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(null,
 
 
 var utils = __webpack_require__(2);
-var bind = __webpack_require__(51);
+var bind = __webpack_require__(52);
 var Axios = __webpack_require__(165);
 var defaults = __webpack_require__(30);
 
@@ -60857,9 +60732,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(56);
+axios.Cancel = __webpack_require__(57);
 axios.CancelToken = __webpack_require__(179);
-axios.isCancel = __webpack_require__(55);
+axios.isCancel = __webpack_require__(56);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -61012,7 +60887,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(54);
+var createError = __webpack_require__(55);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -61445,7 +61320,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(2);
 var transformData = __webpack_require__(176);
-var isCancel = __webpack_require__(55);
+var isCancel = __webpack_require__(56);
 var defaults = __webpack_require__(30);
 var isAbsoluteURL = __webpack_require__(177);
 var combineURLs = __webpack_require__(178);
@@ -61605,7 +61480,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(56);
+var Cancel = __webpack_require__(57);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -66638,7 +66513,7 @@ module.exports.polyfill = function(object) {
 
 //# sourceMappingURL=performance-now.js.map
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(52)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(53)))
 
 /***/ }),
 /* 184 */
@@ -69054,7 +68929,7 @@ var _reactShowMore = __webpack_require__(202);
 
 var _reactShowMore2 = _interopRequireDefault(_reactShowMore);
 
-var _reactRouterDom = __webpack_require__(14);
+var _reactRouterDom = __webpack_require__(15);
 
 __webpack_require__(204);
 
@@ -69063,6 +68938,10 @@ var _reactResponsiveCarousel = __webpack_require__(206);
 var _lodash = __webpack_require__(27);
 
 var _baseService = __webpack_require__(29);
+
+var _reactRedux = __webpack_require__(12);
+
+var _index = __webpack_require__(31);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -69075,37 +68954,29 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Preview = function (_Component) {
     _inherits(Preview, _Component);
 
-    function Preview(props) {
+    function Preview() {
         _classCallCheck(this, Preview);
 
-        var _this = _possibleConstructorReturn(this, (Preview.__proto__ || Object.getPrototypeOf(Preview)).call(this, props));
-
-        if (_this.props.match.params.id) {
-            _this.props.itemSelected(_this.props.match.params.id);
-        }
-
-        return _this;
+        return _possibleConstructorReturn(this, (Preview.__proto__ || Object.getPrototypeOf(Preview)).apply(this, arguments));
     }
 
-    // componentDidMount(){
-    //     window.scrollTo(0, 0);
-    //     if(this.props.match.params.id){
-    //         this.props.itemSelected(this.props.match.params.id)
-    //     }
-
-    // }
-
-
     _createClass(Preview, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            window.scrollTo(0, 0);
+            if (this.props.match.params.id) {
+                this.props.getItemData(this.props.match.params.id);
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
 
-            var _props = this.props,
-                item = _props.item,
-                isLoading = _props.isLoading;
+            var Motel = this.props.Motel;
 
-            if (isLoading && (0, _lodash.isEmpty)(item)) {
+
+            if ((0, _lodash.isEmpty)(Motel.item_selected)) {
                 return _react2.default.createElement(
                     'div',
                     { className: 'text-center' },
@@ -69183,13 +69054,13 @@ var Preview = function (_Component) {
                         _react2.default.createElement(
                             _reactResponsiveCarousel.Carousel,
                             { showThumbs: false, transitionTime: 500 },
-                            item.details.map(function (item, index) {
+                            !(0, _lodash.isEmpty)(Motel.item_selected.details) ? Motel.item_selected.details.map(function (i, index) {
                                 return _react2.default.createElement(
                                     'div',
                                     { key: index, className: 'item-preview' },
-                                    _react2.default.createElement('img', { src: '/upload/motel/' + item.image })
+                                    _react2.default.createElement('img', { src: '/upload/motel/' + i.image })
                                 );
-                            })
+                            }) : ''
                         ),
                         _react2.default.createElement(
                             'div',
@@ -69203,7 +69074,7 @@ var Preview = function (_Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'price_num' },
-                                        (0, _baseService.formatCurrency)(item.price)
+                                        (0, _baseService.formatCurrency)(Motel.item_selected.price)
                                     ),
                                     _react2.default.createElement('div', { className: 'divide' })
                                 ),
@@ -69216,13 +69087,14 @@ var Preview = function (_Component) {
                                         _react2.default.createElement(
                                             'a',
                                             { href: '#' },
-                                            item.title
+                                            Motel.item_selected.title
                                         )
                                     ),
+                                    console.log(),
                                     _react2.default.createElement(
                                         'p',
                                         null,
-                                        item.address + ', ' + item.districts._name + ', ' + item.provinces._name
+                                        Motel.item_selected.address + ', ' + Motel.item_selected.districts._name + ', ' + Motel.item_selected.provinces._name
                                     )
                                 )
                             ),
@@ -69236,7 +69108,7 @@ var Preview = function (_Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'info_detail_title' },
-                                        item.area,
+                                        Motel.item_selected.area,
                                         ' m2'
                                     )
                                 ),
@@ -69247,7 +69119,7 @@ var Preview = function (_Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'info_detail_title' },
-                                        item.num_room,
+                                        Motel.item_selected.num_room,
                                         ' ph\xF2ng'
                                     )
                                 ),
@@ -69258,7 +69130,7 @@ var Preview = function (_Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'info_detail_title' },
-                                        item.num_people,
+                                        Motel.item_selected.num_people,
                                         ' ng\u01B0\u1EDDi'
                                     )
                                 )
@@ -69277,7 +69149,7 @@ var Preview = function (_Component) {
                                     _react2.default.createElement(
                                         'h3',
                                         null,
-                                        (0, _baseService.formatPhone)(item.users.phone)
+                                        (0, _baseService.formatPhone)(Motel.item_selected.users.phone)
                                     )
                                 )
                             ),
@@ -69287,7 +69159,7 @@ var Preview = function (_Component) {
                                 _react2.default.createElement(
                                     _reactShowMore2.default,
                                     { lines: 3, more: 'Xem th\xEAm', less: 'R\xFAt g\u1ECDn', anchorClass: '' },
-                                    item.description
+                                    Motel.item_selected.description
                                 )
                             ),
                             _react2.default.createElement(
@@ -69316,7 +69188,21 @@ var Preview = function (_Component) {
     return Preview;
 }(_react.Component);
 
-exports.default = (0, _reactRouterDom.withRouter)(Preview);
+var mapStateToProps = function mapStateToProps(state) {
+    return {
+        Motel: state.Motel
+    };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch, props) {
+    return {
+        getItemData: function getItemData(id) {
+            return dispatch(_index.MotelAction.getMotelItemRequest(id));
+        }
+    };
+};
+
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Preview));
 
 /***/ }),
 /* 202 */
@@ -69890,7 +69776,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(48)(content, options);
+var update = __webpack_require__(49)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -69910,7 +69796,7 @@ if(false) {
 /* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(47)(false);
+exports = module.exports = __webpack_require__(48)(false);
 // imports
 
 

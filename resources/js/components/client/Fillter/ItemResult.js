@@ -9,7 +9,6 @@ class ItemResult extends Component {
 
     onShowView = (item) => {
         this.props.history.push(`/view/${item.id}/${to_slug(item.title)}.html`);
-        // this.props.getItemData(item.id);
     }
 
     render() {

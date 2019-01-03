@@ -4,6 +4,8 @@ import 'react-input-range/lib/css/index.css'
 import ItemResult from './ItemResult';
 import Select from 'react-select';
 import {isEmpty} from 'lodash';
+import { connect } from 'react-redux';
+import { ProvinceAction, DistrictAction, MotelAction} from './../../../actions/index';
 
 class HomeFillter extends Component {
     constructor(props) {
@@ -44,29 +46,33 @@ class HomeFillter extends Component {
     }
 
     componentDidMount(){
-        let {selected} = this.props;
-        if(!isEmpty(selected.province)){
-            if(isEmpty(selected.district)){
-                this.setState({
-                    province: selected.province.id
-                });
-            }
-            else{
-                this.setState({
-                    province: selected.province.id,
-                    district:selected.district.id
-                });
-            }
-        }
+        this.props.getDistrict();
+        this.props.getProvince();
+        
+
+        // let {selected} = this.props;
+        // if(!isEmpty(selected.province)){
+        //     if(isEmpty(selected.district)){
+        //         this.setState({
+        //             province: selected.province.id
+        //         });
+        //     }
+        //     else{
+        //         this.setState({
+        //             province: selected.province.id,
+        //             district:selected.district.id
+        //         });
+        //     }
+        // }
     }
 
    
 
     render() {
-        const {Province, District,Motel} = this.props;
+        const {Province, District, Motel} = this.props;
         var provinces = [];
         var districts = [];
-
+        
         if(District.isRequest === false && District.isLoading === false){
             District.data.map((item, index) => {
                 districts.push({
@@ -201,5 +207,19 @@ class HomeFillter extends Component {
         );
     }
 }
+const mapStateToProps = (state) => {
+    return {Province: state.Province, District: state.District, Motel: state.Motel}
+}
 
-export default HomeFillter;
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        getProvince: () => dispatch(ProvinceAction.getProvinceRequest()),
+        getDistrict: (id) => dispatch(DistrictAction.getDistrictRequest(id)),
+        getMotel: () => dispatch(MotelAction.getMotelRequest()),
+        getProvinceSelected: (id) => dispatch(ProvinceAction.getProvinceSelectedRequest(id)),
+        getDistrictSelected: (id) => dispatch(DistrictAction.getDistrictSelectedRequest(id)),
+        getItemMotel: (id) => dispatch(MotelAction.getMotelItemRequest(id))
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(HomeFillter);

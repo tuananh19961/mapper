@@ -5,31 +5,23 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from 'react-responsive-carousel';
 import {isEmpty} from 'lodash';
 import {formatCurrency, formatPhone} from './../../../services/base-service';
+import { connect } from 'react-redux';
+import {MotelAction} from './../../../actions/index';
 
 class Preview extends Component {
- 
-    constructor(props) {
-        super(props);
 
+    componentDidMount(){
+        window.scrollTo(0, 0);
         if(this.props.match.params.id){
-            this.props.itemSelected(this.props.match.params.id)
+            this.props.getItemData(this.props.match.params.id)
         }
-        
     }
-    
-    // componentDidMount(){
-    //     window.scrollTo(0, 0);
-    //     if(this.props.match.params.id){
-    //         this.props.itemSelected(this.props.match.params.id)
-    //     }
-
-    // }
-
-
 
     render() {
-        const {item, isLoading} = this.props;
-        if(isLoading && isEmpty(item)){
+        const {Motel} = this.props;
+        
+
+        if(isEmpty(Motel.item_selected) ){
             return(
             <div className="text-center">
                 <i className="fa fa-spinner fa-pulse fa-3x fa-fw mt-20"></i>
@@ -40,7 +32,6 @@ class Preview extends Component {
         else
         return (
             <div className="preview">
-
                 <div className="preview_top">
                     <div className="pull-left">
                         <button
@@ -78,26 +69,29 @@ class Preview extends Component {
                     <div className="preview_image">
                     
                         <Carousel showThumbs={false} transitionTime={500}>
-                                    {
-                                        item.details.map((item, index) => {
+                                    {   !isEmpty(Motel.item_selected.details) ?
+                                        Motel.item_selected.details.map((i, index) => {
                                         return <div key={index} className="item-preview">
-                                            <img src={`/upload/motel/${item.image}`}/>
+                                            <img src={`/upload/motel/${i.image}`}/>
                                         </div>
                                         })
+                                        : 
+                                        ''
                                     }
                         </Carousel>
                         
                         <div className="preview_info">
                             <div className="preview_info_top">
                                 <div className="info_price">
-                                    <div className="price_num">{formatCurrency(item.price)}</div>
+                                    <div className="price_num">{formatCurrency(Motel.item_selected.price)}</div>
                                     <div className="divide"></div>
                                 </div>
                                 <div className="info_name">
                                     <h2>
-                                        <a href="#">{item.title}</a>
+                                        <a href="#">{Motel.item_selected.title}</a>
                                     </h2>
-                                    <p>{`${item.address}, ${item.districts._name}, ${item.provinces._name}`}</p>
+                                    {console.log()}
+                                    <p>{`${Motel.item_selected.address}, ${Motel.item_selected.districts._name}, ${Motel.item_selected.provinces._name}`}</p>
                                 </div>
                             </div>
 
@@ -105,32 +99,32 @@ class Preview extends Component {
                                 <div className="item_info_detail">
                                     <i className="fa fa-arrows"></i>
                                     <div className="info_detail_title">
-                                        {item.area} m2</div>
+                                        {Motel.item_selected.area} m2</div>
                                 </div>
 
                                 <div className="item_info_detail">
                                     <i className="fa fa-home"></i>
                                     <div className="info_detail_title">
-                                        {item.num_room} phòng</div>
+                                        {Motel.item_selected.num_room} phòng</div>
                                 </div>
 
                                 <div className="item_info_detail">
                                     <i className="fa fa-group"></i>
                                     <div className="info_detail_title">
-                                        {item.num_people} người</div>
+                                        {Motel.item_selected.num_people} người</div>
                                 </div>
                             </div>
 
                             <div className="text-center btn_contact">
                                 <button type="button" className="btn btn-success">Liên hệ</button>
                                 <div className="phone_number">
-                                    <h3>{formatPhone(item.users.phone)}</h3>
+                                    <h3>{formatPhone(Motel.item_selected.users.phone)}</h3>
                                 </div>
                             </div>
 
                             <div className="item_info_desciption">
                                 <ShowMore lines={3} more='Xem thêm' less='Rút gọn' anchorClass=''>
-                                    {item.description}
+                                    {Motel.item_selected.description}
                                 </ShowMore>
                             </div>
 
@@ -155,5 +149,17 @@ class Preview extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return{
+        Motel: state.Motel
+    }
+}
 
-export default withRouter(Preview);
+const mapDispatchToProps = (dispatch,props) => {
+    return {
+        getItemData : (id) => dispatch(MotelAction.getMotelItemRequest(id))
+    }
+}
+
+
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Preview));
