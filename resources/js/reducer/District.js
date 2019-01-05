@@ -22,6 +22,7 @@ const District = (state = initialState, action) => {
                 return {
                     ...state,
                     data: action.payload.data.data,
+                    selected: {},
                     isRequest: false,
                     isLoading: false,
                     status: true,

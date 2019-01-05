@@ -22,9 +22,7 @@ class HomeFillter extends Component {
     onProvinceChange = (e) => {
         this.setState({province: e.value, district: -1})
         this.props.getProvinceSelected(e);
-        this
-            .props
-            .getDistrict(e.value);
+        this.props.getDistrict(e.value);
 
     }
 

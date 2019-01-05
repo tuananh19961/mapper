@@ -75,8 +75,8 @@ class ListResult extends Component {
                                     .onSizePage(Motel.data)
                                     .map((num, index) => {
                                         return <li 
-                                            className="page-item" 
-                                            key={index} 
+                                            className={`page-item ${this.state.currentPage === num ? 'active' : ''}`} 
+                                            key={index}
                                             onClick={() => this.handleClick(num)}
                                         >
                                             {num}
