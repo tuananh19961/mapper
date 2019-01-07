@@ -25,4 +25,12 @@ Route::resource('districts', 'API\DistrictController');
 Route::get('motels/fillter/{id_province}/{id_district?}','API\MotelController@fillter');
 Route::resource('motels', 'API\MotelController'); 
 
+// USER API
+Route::post('auth/register', 'UserController@register');
+Route::post('auth/login', 'UserController@login');
+
+Route::group(['middleware' => 'jwt.auth'], function () {
+    Route::get('user-info', 'UserController@getUserInfo');
+});
+
 Auth::routes();

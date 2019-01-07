@@ -18,6 +18,15 @@ const getDataByID = async(url, id) => {
     }
 };
 
+const postData =  async(url,data) => {
+    try {
+        const result = await axios.post(url,data);
+        return result;
+    } catch (e) {
+        throw e;
+    }
+};
+
 const formatCurrency = (price) => {
     price = price.toLocaleString('vi', {
         style: 'currency',
@@ -61,10 +70,24 @@ const formatPhone = (text) => {
     return text;
 }
 
+// GET DATA WITH HEADER
+const getDataMiddleware = async (url,token) => {
+    const instance = axios.create({
+        baseURL: '/api/',
+        timeout: 1000,
+        headers: {'Authorization': 'Bearer '+token}
+      });
+
+    const result = await instance.get(url);
+    return result;
+}
+
 export {
     getTakenData,
     getDataByID,
     formatCurrency,
     to_slug,
-    formatPhone
+    formatPhone,
+    postData,
+    getDataMiddleware
 };

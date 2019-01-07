@@ -1,7 +1,40 @@
 import * as types from './../constants/ActionType';
-import {getTakenData , getDataByID} from './../services/base-service';
+import {getTakenData , getDataByID, postData, getDataMiddleware} from './../services/base-service';
 import axios from 'axios';
 
+// USER ACTION
+const userLogin = (isSuccess, data, token) => {
+    return {
+        type: types.USER_LOGIN,
+        payload: {
+            isSuccess,
+            data,
+            token
+        }
+    }
+}
+
+const userLoginRequest = (data) => async dispatch => {
+    try {
+        const result = await postData('/api/auth/login',data);
+        if (result.data.token) {  
+            const user = await getDataMiddleware('user-info',result.data.token);
+            dispatch(userLogin(true, user, result.data.token))
+        }
+    } catch (e) {
+        const error = e.response
+            ? e.response
+            : "Network Error!";
+        dispatch(userLogin(false, error, null))
+    }
+};
+
+
+export const UserAction = {
+    userLoginRequest
+}
+
+// PROVINCE ACTION
 const provinceRequest = () => {
     return {type: types.PROVINCE_REQUEST}
 }

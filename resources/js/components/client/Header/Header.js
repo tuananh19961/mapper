@@ -53,7 +53,7 @@ class Header extends Component {
                     </div>
                
                     <div className="user-login-info">
-                        <a href="#"><img src="/client/img/core-img/user.svg" alt="" /></a>
+                        <a href="#" onClick = {() => this.props.openLogin()}><img src="/client/img/core-img/user.svg" alt="" /></a>
                     </div>
                     <div className="favourite-area app-responsive">
                         <a href="#" onClick={() => this.onChangeView(constant.VIEW_LIST)}><img src="/client/img/core-img/lnr-list.svg" alt="" /></a>

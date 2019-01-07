@@ -17,3 +17,8 @@ export const ITEM_HOVER = 'ITEM_HOVER';
 export const ON_MOUSE_OUT = 'ON_MOUSE_OUT';
 export const GET_MOTEL_BY_PROVINCE = 'GET_MOTEL_BY_PROVINCE';
 export const GET_MOTEL_BY_DISTRICT = 'GET_MOTEL_BY_DISTRICT';
+
+// USER
+
+export const USER_LOGIN = 'USER_LOGIN';
+export const USER_REGISTER = 'USER_REGISTER';

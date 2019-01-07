@@ -5,6 +5,7 @@ import Preview from './Home/Preview';
 import * as constant from './../../constants/Config';
 import {Route, Link} from "react-router-dom";
 
+
 class HomePage extends Component {
     constructor() {
         super();
@@ -78,7 +79,7 @@ class HomePage extends Component {
                         </div>
 
                         <div className="col-sm-5">
-                            <div className="home_fillter"  id="style-1">
+                            <div className="home_fillter">
                                         <Route path="/" exact component={ HomeFillter }/>
                                         <Route path="/view/:id/:slug.html" component = { Preview }/>
                             </div>

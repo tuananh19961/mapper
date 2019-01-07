@@ -23,6 +23,14 @@ const icon2 = {
     }
 };
 
+const icon3 = {
+    url: 'https://cdn3.iconfinder.com/data/icons/e-commerce-pt-2/96/map_marker_mark_destination-512.png',
+    scaledSize: {
+        width: 25,
+        height: 25
+    }
+};
+
 class HomeMap extends Component {
 
     constructor(props) {
@@ -53,13 +61,14 @@ class HomeMap extends Component {
         marker.setIcon(icon2);
     }
 
-    onSelectItem = (item) => {
-            this.props.history.push(`/view/${item.id}/${to_slug(item.title)}.html`)
+    onSelectItem = (props, marker, e) => {
+            this.props.history.push(`/view/${props.data.id}/${to_slug(props.data.title)}.html`)
     }
 
     componentWillReceiveProps(next){
         if(!isEmpty(next.Province.selected)){
             if(!isEmpty(next.District.selected)){
+
                 Geocode.fromAddress(`${next.District.selected.label} ${next.Province.selected.label}`).then(
                     response => {
                       const { lat, lng } = response.results[0].geometry.location;
@@ -75,6 +84,7 @@ class HomeMap extends Component {
                       console.error(error);
                     }
                 );
+                    
             }
             else{
                 Geocode.fromAddress(next.Province.selected.label).then(
@@ -117,10 +127,10 @@ class HomeMap extends Component {
                         <Marker
                             index={index}
                             icon={item.id === Motel.item_hover.id? icon: icon2}
+                            data={item}
                             onMouseover={this.onMouseover}
                             onMouseout={this.onMouseout}
-                            onClick=
-                            {() => this.onSelectItem(item)}
+                            onClick={this.onSelectItem}
                             title={item.title}
                             position={{
                             lat: item.latitude,

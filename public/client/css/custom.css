@@ -537,3 +537,23 @@ ul.pagination{
 .pagination .active{
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
+
+/* LOGIN FORM */
+.img-top-login img{
+    width: 200px;
+    height: auto;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #007bff;
+}
+.login-form label{
+    font-weight: 600;
+}
+.login-form label::after{
+    content: "*";
+    margin-left: 2px;
+    color: red;
+}
+.favourite-area:hover,.user-login-info:hover{
+    background-color: #e5e5e5;
+}
