@@ -174,10 +174,67 @@ const resetMotelData = () => {
     }
 }
 
+// FILLTER BY PROVINCE ID
+const getMotelByProvince = (isSuccess, data) => {
+    return {
+        type: types.GET_MOTEL_BY_PROVINCE,
+        payload: {
+            isSuccess,
+            data
+        }
+    }
+}
+
+const getMotelByProvinceRequest = (province) => async dispatch => {
+    dispatch(motelRequest());
+    try {
+        const result = await getDataByID('/api/motels/fillter',province);
+        if (result) {
+            dispatch(getMotelByProvince(true, result))
+        }
+    } catch (e) {
+        const error = e.response
+            ? e.response.data
+            : {
+                message: "Network Error!"
+            };
+        dispatch(getMotelByProvince(false, error))
+    }
+};
+
+// FILLTER BY DISTRICT ID
+const getMotelByDistrict = (isSuccess, data) => {
+    return {
+        type: types.GET_MOTEL_BY_DISTRICT,
+        payload: {
+            isSuccess,
+            data
+        }
+    }
+}
+
+const getMotelByDistrictRequest = (province,district) => async dispatch => {
+    dispatch(motelRequest());
+    try {
+        const result = await axios(`/api/motels/fillter/${province}/${district}`);
+        if (result) {
+            dispatch(getMotelByDistrict(true, result))
+        }
+    } catch (e) {
+        const error = e.response
+            ? e.response.data
+            : {
+                message: "Network Error!"
+            };
+        dispatch(getMotelByDistrict(false, error))
+    }
+};
 export const MotelAction = {
     getMotelRequest,
     onHoverItem,
     onMouseOutItem,
     getMotelItemRequest,
-    resetMotelData
+    resetMotelData,
+    getMotelByProvinceRequest,
+    getMotelByDistrictRequest
 }

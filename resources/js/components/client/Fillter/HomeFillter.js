@@ -23,12 +23,13 @@ class HomeFillter extends Component {
         this.setState({province: e.value, district: -1})
         this.props.getProvinceSelected(e);
         this.props.getDistrict(e.value);
-
+        this.props.fillterByProvince(e.value);
     }
 
     onDistrictChange = (e) => {
         this.setState({district: e.value})
         this.props.getDistrictSelected(e);
+        this.props.fillterByDistrict(this.state.province, e.value);
     }
 
     resetFillter = () => {
@@ -75,7 +76,7 @@ class HomeFillter extends Component {
                         <li className="breadcrumb-item">
                             <a href="#">Home</a>
                         </li>
-                        <li className="breadcrumb-item active" aria-current="page">Library</li>
+                        <li className="breadcrumb-item active" aria-current="page">Đà Nẵng</li>
                     </ol>
                 </nav>
 
@@ -151,7 +152,9 @@ const mapDispatchToProps = (dispatch, props) => {
         getDistrict: (id) => dispatch(DistrictAction.getDistrictRequest(id)),
         getMotel: () => dispatch(MotelAction.getMotelRequest()),
         getProvinceSelected: (item) => dispatch(ProvinceAction.getProvinceSelected(item)),
-        getDistrictSelected: (item) => dispatch(DistrictAction.getDistrictSelected(item))
+        getDistrictSelected: (item) => dispatch(DistrictAction.getDistrictSelected(item)),
+        fillterByProvince: (id) => dispatch(MotelAction.getMotelByProvinceRequest(id)),
+        fillterByDistrict: (province,district) => dispatch(MotelAction.getMotelByDistrictRequest(province,district))
     }
 }
 

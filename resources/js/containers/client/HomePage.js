@@ -74,12 +74,11 @@ class HomePage extends Component {
                         <div className="col-sm-7">
                             <div className="home_map">
                                 <HomeMap />
-                                <h1><Link to='/view/1/phong-tro-moi-xay-co-gac-lung-23m2-hoa-xuan-hai-chau.html'>abc</Link></h1>
                             </div>
                         </div>
 
                         <div className="col-sm-5">
-                            <div className="home_fillter">
+                            <div className="home_fillter"  id="style-1">
                                         <Route path="/" exact component={ HomeFillter }/>
                                         <Route path="/view/:id/:slug.html" component = { Preview }/>
                             </div>

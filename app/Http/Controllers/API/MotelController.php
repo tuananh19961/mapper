@@ -19,23 +19,28 @@ class MotelController extends Controller
             $query->select('id','_name');}
         ,
         'districts'=> function($query){
-            $query->select('id','_name','_prefix');}])->get();
+            $query->select('id','_name','_prefix');}])->where('id_province','=',3)->get();
         return response() -> json($motel);
     }
 
     public function fillter($id_province, $id_district = null){
         if($id_district == null){
             $motel = Motel::with([
+            'details',
             'provinces' => function($query){
                 $query->select('id','_name');
+            },
+            'districts'=> function($query){
+                $query->select('id','_name','_prefix');
             }
             ])->where('id_province','=',$id_province)->get();
         }
         else{
             $motel = Motel::with([
+                'details',
                 'provinces' => function($query){
-                    $query->select('id','_name');}
-                ,
+                    $query->select('id','_name');
+                },
                 'districts'=> function($query){
                     $query->select('id','_name','_prefix');}
                 ])

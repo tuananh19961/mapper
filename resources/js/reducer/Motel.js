@@ -73,11 +73,49 @@ const Motel = (state = initialState, action) => {
             return{
             ...state
             };
+    
+        case types.GET_MOTEL_BY_PROVINCE:
+            if (action.payload.isSuccess) {
+                return {
+                    ...state,
+                    data: action.payload.data.data,
+                    isRequest: false,
+                    isLoading: false,
+                    status: true,
+                    messages: 'Load success!'
+                };
+            } else 
+                return {
+                    ...state,
+                    isRequest: false,
+                    isLoading: false,
+                    status: false,
+                    messages: action.payload.data.messages
+                };
+        
+        case types.GET_MOTEL_BY_DISTRICT:
+            if (action.payload.isSuccess) {
+                return {
+                    ...state,
+                    data: action.payload.data.data,
+                    isRequest: false,
+                    isLoading: false,
+                    status: true,
+                    messages: 'Load success!'
+                };
+            } else 
+                return {
+                    ...state,
+                    isRequest: false,
+                    isLoading: false,
+                    status: false,
+                    messages: action.payload.data.messages
+                };
 
-        default:
-            return {
-                ...state
-            }
+            default:
+                return {
+                    ...state
+                }
     }
 }
 

@@ -1704,6 +1704,8 @@ var GET_MOTEL_ITEM_DATA = exports.GET_MOTEL_ITEM_DATA = 'GET_MOTEL_ITEM_DATA';
 var RESET_MOTEL_DATA = exports.RESET_MOTEL_DATA = 'RESET_MOTEL_DATA';
 var ITEM_HOVER = exports.ITEM_HOVER = 'ITEM_HOVER';
 var ON_MOUSE_OUT = exports.ON_MOUSE_OUT = 'ON_MOUSE_OUT';
+var GET_MOTEL_BY_PROVINCE = exports.GET_MOTEL_BY_PROVINCE = 'GET_MOTEL_BY_PROVINCE';
+var GET_MOTEL_BY_DISTRICT = exports.GET_MOTEL_BY_DISTRICT = 'GET_MOTEL_BY_DISTRICT';
 
 /***/ }),
 /* 16 */
@@ -2299,12 +2301,125 @@ var resetMotelData = function resetMotelData() {
     };
 };
 
+// FILLTER BY PROVINCE ID
+var getMotelByProvince = function getMotelByProvince(isSuccess, data) {
+    return {
+        type: types.GET_MOTEL_BY_PROVINCE,
+        payload: {
+            isSuccess: isSuccess,
+            data: data
+        }
+    };
+};
+
+var getMotelByProvinceRequest = function getMotelByProvinceRequest(province) {
+    return function () {
+        var _ref5 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee5(dispatch) {
+            var result, error;
+            return _regenerator2.default.wrap(function _callee5$(_context5) {
+                while (1) {
+                    switch (_context5.prev = _context5.next) {
+                        case 0:
+                            dispatch(motelRequest());
+                            _context5.prev = 1;
+                            _context5.next = 4;
+                            return (0, _baseService.getDataByID)('/api/motels/fillter', province);
+
+                        case 4:
+                            result = _context5.sent;
+
+                            if (result) {
+                                dispatch(getMotelByProvince(true, result));
+                            }
+                            _context5.next = 12;
+                            break;
+
+                        case 8:
+                            _context5.prev = 8;
+                            _context5.t0 = _context5['catch'](1);
+                            error = _context5.t0.response ? _context5.t0.response.data : {
+                                message: "Network Error!"
+                            };
+
+                            dispatch(getMotelByProvince(false, error));
+
+                        case 12:
+                        case 'end':
+                            return _context5.stop();
+                    }
+                }
+            }, _callee5, undefined, [[1, 8]]);
+        }));
+
+        return function (_x5) {
+            return _ref5.apply(this, arguments);
+        };
+    }();
+};
+
+// FILLTER BY DISTRICT ID
+var getMotelByDistrict = function getMotelByDistrict(isSuccess, data) {
+    return {
+        type: types.GET_MOTEL_BY_DISTRICT,
+        payload: {
+            isSuccess: isSuccess,
+            data: data
+        }
+    };
+};
+
+var getMotelByDistrictRequest = function getMotelByDistrictRequest(province, district) {
+    return function () {
+        var _ref6 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee6(dispatch) {
+            var result, error;
+            return _regenerator2.default.wrap(function _callee6$(_context6) {
+                while (1) {
+                    switch (_context6.prev = _context6.next) {
+                        case 0:
+                            dispatch(motelRequest());
+                            _context6.prev = 1;
+                            _context6.next = 4;
+                            return (0, _axios2.default)('/api/motels/fillter/' + province + '/' + district);
+
+                        case 4:
+                            result = _context6.sent;
+
+                            if (result) {
+                                dispatch(getMotelByDistrict(true, result));
+                            }
+                            _context6.next = 12;
+                            break;
+
+                        case 8:
+                            _context6.prev = 8;
+                            _context6.t0 = _context6['catch'](1);
+                            error = _context6.t0.response ? _context6.t0.response.data : {
+                                message: "Network Error!"
+                            };
+
+                            dispatch(getMotelByDistrict(false, error));
+
+                        case 12:
+                        case 'end':
+                            return _context6.stop();
+                    }
+                }
+            }, _callee6, undefined, [[1, 8]]);
+        }));
+
+        return function (_x6) {
+            return _ref6.apply(this, arguments);
+        };
+    }();
+};
 var MotelAction = exports.MotelAction = {
     getMotelRequest: getMotelRequest,
     onHoverItem: onHoverItem,
     onMouseOutItem: onMouseOutItem,
     getMotelItemRequest: getMotelItemRequest,
-    resetMotelData: resetMotelData
+    resetMotelData: resetMotelData,
+    getMotelByProvinceRequest: getMotelByProvinceRequest,
+    getMotelByDistrictRequest: getMotelByDistrictRequest
 };
 
 /***/ }),
@@ -48343,6 +48458,38 @@ var Motel = function Motel() {
             state.item_selected = {};
             return _extends({}, state);
 
+        case types.GET_MOTEL_BY_PROVINCE:
+            if (action.payload.isSuccess) {
+                return _extends({}, state, {
+                    data: action.payload.data.data,
+                    isRequest: false,
+                    isLoading: false,
+                    status: true,
+                    messages: 'Load success!'
+                });
+            } else return _extends({}, state, {
+                isRequest: false,
+                isLoading: false,
+                status: false,
+                messages: action.payload.data.messages
+            });
+
+        case types.GET_MOTEL_BY_DISTRICT:
+            if (action.payload.isSuccess) {
+                return _extends({}, state, {
+                    data: action.payload.data.data,
+                    isRequest: false,
+                    isLoading: false,
+                    status: true,
+                    messages: 'Load success!'
+                });
+            } else return _extends({}, state, {
+                isRequest: false,
+                isLoading: false,
+                status: false,
+                messages: action.payload.data.messages
+            });
+
         default:
             return _extends({}, state);
     }
@@ -51034,16 +51181,7 @@ var HomePage = function (_Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'home_map' },
-                            _react2.default.createElement(_HomeMap2.default, null),
-                            _react2.default.createElement(
-                                'h1',
-                                null,
-                                _react2.default.createElement(
-                                    _reactRouterDom.Link,
-                                    { to: '/view/1/phong-tro-moi-xay-co-gac-lung-23m2-hoa-xuan-hai-chau.html' },
-                                    'abc'
-                                )
-                            )
+                            _react2.default.createElement(_HomeMap2.default, null)
                         )
                     ),
                     _react2.default.createElement(
@@ -51051,7 +51189,7 @@ var HomePage = function (_Component) {
                         { className: 'col-sm-5' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'home_fillter' },
+                            { className: 'home_fillter', id: 'style-1' },
                             _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _HomeFillter2.default }),
                             _react2.default.createElement(_reactRouterDom.Route, { path: '/view/:id/:slug.html', component: _Preview2.default })
                         )
@@ -58765,11 +58903,13 @@ var HomeFillter = function (_Component) {
             _this.setState({ province: e.value, district: -1 });
             _this.props.getProvinceSelected(e);
             _this.props.getDistrict(e.value);
+            _this.props.fillterByProvince(e.value);
         };
 
         _this.onDistrictChange = function (e) {
             _this.setState({ district: e.value });
             _this.props.getDistrictSelected(e);
+            _this.props.fillterByDistrict(_this.state.province, e.value);
         };
 
         _this.resetFillter = function () {
@@ -58846,7 +58986,7 @@ var HomeFillter = function (_Component) {
                         _react2.default.createElement(
                             'li',
                             { className: 'breadcrumb-item active', 'aria-current': 'page' },
-                            'Library'
+                            '\u0110\xE0 N\u1EB5ng'
                         )
                     )
                 ),
@@ -58974,6 +59114,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, props) {
         },
         getDistrictSelected: function getDistrictSelected(item) {
             return dispatch(_index.DistrictAction.getDistrictSelected(item));
+        },
+        fillterByProvince: function fillterByProvince(id) {
+            return dispatch(_index.MotelAction.getMotelByProvinceRequest(id));
+        },
+        fillterByDistrict: function fillterByDistrict(province, district) {
+            return dispatch(_index.MotelAction.getMotelByDistrictRequest(province, district));
         }
     };
 };
@@ -68710,8 +68856,12 @@ var ListResult = function (_Component) {
                         _react2.default.createElement(
                             'span',
                             null,
-                            Motel.data.length,
-                            'k\u1EBFt qu\u1EA3'
+                            _react2.default.createElement(
+                                'b',
+                                null,
+                                Motel.data.length
+                            ),
+                            ' k\u1EBFt qu\u1EA3'
                         )
                     )
                 ),
@@ -68731,7 +68881,7 @@ var ListResult = function (_Component) {
                         return _react2.default.createElement(_ItemResult2.default, { item: item, key: index });
                     }) : _react2.default.createElement(
                         'div',
-                        { className: 'text-center' },
+                        { className: 'text-center no-result' },
                         _react2.default.createElement(
                             'span',
                             { className: 'mt-20' },

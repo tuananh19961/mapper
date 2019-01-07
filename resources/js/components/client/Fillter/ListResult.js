@@ -43,8 +43,7 @@ class ListResult extends Component {
                         </div>
 
                         <div className="item-top num_results">
-                            <span>{Motel.data.length}
-                                kết quả</span>
+                            <span><b>{Motel.data.length}</b> kết quả</span>
                         </div>
                     </div>
 
@@ -62,7 +61,7 @@ class ListResult extends Component {
                                     .map((item, index) => {
                                         return <ItemResult item={item} key={index}/>
                                     })
-                                : <div className="text-center">
+                                : <div className="text-center no-result">
                                     <span className="mt-20">
                                         Không có kết quả phù hợp!
                                     </span>

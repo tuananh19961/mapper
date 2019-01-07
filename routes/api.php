@@ -22,6 +22,7 @@ Route::resource('provinces', 'API\ProvinceController');
 Route::get('districts/{id_district}/fillter','API\DistrictController@filldistrict');
 Route::resource('districts', 'API\DistrictController');    
 
-Route::get('motels/fill/{id_province}/{id_district?}','API\MotelController@fillter');
+Route::get('motels/fillter/{id_province}/{id_district?}','API\MotelController@fillter');
 Route::resource('motels', 'API\MotelController'); 
+
 Auth::routes();

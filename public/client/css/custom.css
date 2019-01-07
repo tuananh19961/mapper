@@ -12,7 +12,10 @@ html, body {
 }
 .home_fillter{
     overflow-x: hidden;
-    overflow-y: auto
+    overflow-y: auto;
+}
+.no-result{
+    height: 200px;
 }
 .nav-brand img{
    height: 50px;
