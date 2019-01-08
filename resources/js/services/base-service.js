@@ -75,12 +75,13 @@ const getDataMiddleware = async (url,token) => {
     const instance = axios.create({
         baseURL: '/api/',
         timeout: 1000,
-        headers: {'Authorization': 'Bearer '+token}
+        headers: {'Authorization': 'Bearer ' + token}
       });
 
     const result = await instance.get(url);
     return result;
 }
+
 
 export {
     getTakenData,

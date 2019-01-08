@@ -5,7 +5,6 @@ import Preview from './Home/Preview';
 import * as constant from './../../constants/Config';
 import {Route, Link} from "react-router-dom";
 
-
 class HomePage extends Component {
     constructor() {
         super();

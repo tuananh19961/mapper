@@ -40,6 +40,7 @@ class HomeFillter extends Component {
         this
             .props
             .getProvince();
+        this.props.getMotel();
     }
 
     // RENDER FUNCTION

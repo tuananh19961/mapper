@@ -65,7 +65,6 @@ class Login extends Component {
             email: this.state.email,
             password: this.state.password
         });
- 
     }
 
     componentWillReceiveProps(next){
@@ -74,7 +73,8 @@ class Login extends Component {
                 error: next.User.messages
             });
         }
-        else{
+
+        if(next.User.status === true){
             this.setState({
                 email: '',
                 password: '',
@@ -84,12 +84,15 @@ class Login extends Component {
                     passState:''
                 }
             });
-            this.props.onLogin();
+            this.props.onCloseLogin()
         }
+
+        
     }
 
     render() {
         const {email, password} = this.state;
+        const {User} = this.props;
 
         return (
             <Container className="login-form">
@@ -166,7 +169,11 @@ class Login extends Component {
                                 ? true 
                                 : false}
                         >
-                            <i className="fa fa-sign-in"></i> Login
+                             {
+                                ( User.isRequest === true)
+                                ? <span><i className="fa fa-spinner fa-pulse fa-2x fa-fw mr-5"></i> Đang tải...</span>
+                                : <span><i className="fa fa-sign-in mr-5"></i>Đăng nhập</span>
+                            }
                         </Button>
                     </div>
                     

@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import Header from './../../components/client/Header/Header';
-import Footer from './../../components/client/Footer/Footer';
 import HomePage from './../../containers/client/HomePage';
 import * as constant from './../../constants/Config';
-import Login from './../../containers/client/User/Login/Login';
 import Modal from 'react-responsive-modal';
+import 'react-notifications/lib/notifications.css';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+import User from './../../containers/client/User/User';
 
 class Home extends Component {
     constructor(props) {
@@ -30,17 +31,19 @@ class Home extends Component {
     }
 
     onHandleLogin = () => {
-        this.setState({ open: false });
+            this.setState({ open: false });
+            NotificationManager.success('', 'Đăng nhập thành công!', 2000);      
     }
 
     render() {
         let {view, open} = this.state;
         return (
             <div className="wrapper">
+                <NotificationContainer />
                 <Header changeView={this.onChangView} openLogin = {this.onOpenLogin}/>
 
                 <Modal open={open} onClose={this.onCloseModal} center>
-                    <Login onLogin = {this.onHandleLogin}/>
+                    <User onLogin = {this.onHandleLogin} />
                 </Modal>
 
                 <section className="new_arrivals_area section-padding-80 clearfix">

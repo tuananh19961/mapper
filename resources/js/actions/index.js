@@ -1,8 +1,13 @@
 import * as types from './../constants/ActionType';
 import {getTakenData , getDataByID, postData, getDataMiddleware} from './../services/base-service';
 import axios from 'axios';
+import {api} from './../services/middleware-service';
+import baseURL from './../constants/baseURL';
 
 // USER ACTION
+const userRequest = () => {
+    return {type: types.USER_REQUEST}
+}
 const userLogin = (isSuccess, data, token) => {
     return {
         type: types.USER_LOGIN,
@@ -15,11 +20,13 @@ const userLogin = (isSuccess, data, token) => {
 }
 
 const userLoginRequest = (data) => async dispatch => {
+    dispatch(userRequest());
     try {
         const result = await postData('/api/auth/login',data);
         if (result.data.token) {  
             const user = await getDataMiddleware('user-info',result.data.token);
             dispatch(userLogin(true, user, result.data.token))
+            return result;
         }
     } catch (e) {
         const error = e.response
@@ -29,9 +36,87 @@ const userLoginRequest = (data) => async dispatch => {
     }
 };
 
+// GET CURRENT USER IN LOCALSTORAGE
+const userLoginLocal = (isSuccess, data) => {
+    return {
+        type: types.USER_LOCAL,
+        payload: {
+            isSuccess,
+            data,
+        }
+    }
+}
+const getUserLocal = (token) => async dispatch => {
+    try {
+        const result = await getDataMiddleware('user-info', token);
+        if (result) { 
+            dispatch(userLoginLocal(true, result))
+        }
+    } catch (e) {
+        const error = e.response
+            ? e.response
+            : "Network Error!";
+            dispatch(userLoginLocal(false, error))
+    }
+};
+
+// USER LOGOUT
+const userLogout = (isSuccess, data) => {
+    return {
+        type: types.USER_LOGOUT,
+        payload: {
+            isSuccess,
+            data
+        }
+    }
+}
+const userLogoutRequest = (token) => async dispatch => {
+    try {
+        const result = await axios.get(`/api/user-logout?token=${token}`);
+        if (result) { 
+            dispatch(userLogout(true, result))
+        }
+    } catch (e) {
+        const error = e.response
+            ? e.response
+            : "Network Error!";
+            dispatch(userLogout(false, error))
+    }
+};
+
+// USER REGISTER
+
+
+const userRegister = (isSuccess, data) => {
+    return {
+        type: types.USER_REGISTER,
+        payload: {
+            isSuccess,
+            data
+        }
+    }
+}
+
+const userRegisterRequest = (data) => async dispatch => {
+    dispatch(userRequest());
+    try {
+        const result = await postData('/api/auth/register',data);
+        if (result) {  
+            dispatch(userRegister(true, result));
+        }
+    } catch (e) {
+        const error = e.response
+            ? e.response
+            : "Network Error!";
+        dispatch(userRegister(false, error));
+    }
+};
 
 export const UserAction = {
-    userLoginRequest
+    userLoginRequest,
+    getUserLocal,
+    userLogoutRequest,
+    userRegisterRequest
 }
 
 // PROVINCE ACTION
@@ -262,6 +347,27 @@ const getMotelByDistrictRequest = (province,district) => async dispatch => {
         dispatch(getMotelByDistrict(false, error))
     }
 };
+
+
+const getListMotelTest =  () => async dispatch => {
+    try {
+        const url = baseURL.MOTEL_API;
+        
+        const result = await api().get(url);
+
+        if (result) {
+           console.log(result);
+        }
+    } catch (e) {
+        const error = e.response
+            ? e.response.data
+            : {
+                message: "Network Error!"
+            };
+            console.log('error',error);
+    }
+};
+
 export const MotelAction = {
     getMotelRequest,
     onHoverItem,
@@ -269,5 +375,6 @@ export const MotelAction = {
     getMotelItemRequest,
     resetMotelData,
     getMotelByProvinceRequest,
-    getMotelByDistrictRequest
+    getMotelByDistrictRequest,
+    getListMotelTest
 }

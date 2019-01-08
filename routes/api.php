@@ -28,9 +28,11 @@ Route::resource('motels', 'API\MotelController');
 // USER API
 Route::post('auth/register', 'UserController@register');
 Route::post('auth/login', 'UserController@login');
+Route::get('user/verify/{verification_code}', 'UserController@verifyUser');
 
 Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('user-info', 'UserController@getUserInfo');
+    Route::get('user-logout', 'UserController@logout');
 });
 
 Auth::routes();
