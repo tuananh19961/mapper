@@ -12,6 +12,11 @@ const initialState = {
 const Province = (state = initialState, action) => {
     switch(action.type){
 
+        case types.FILLTER_RESET:
+            return{
+                ...state,
+                selected: {}
+            }
         case types.PROVINCE_REQUEST:
                 return {
                 ...state,

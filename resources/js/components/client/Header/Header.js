@@ -105,7 +105,7 @@ class Header extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        User: state.User
+        User: state.User,
     }
 }
 

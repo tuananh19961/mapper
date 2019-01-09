@@ -5,6 +5,7 @@ import Select from 'react-select';
 import {connect} from 'react-redux';
 import {ProvinceAction, DistrictAction, MotelAction} from './../../../actions/index';
 import ListResult from './ListResult';
+import { isEmpty } from 'lodash';
 
 class HomeFillter extends Component {
     constructor(props) {
@@ -33,7 +34,9 @@ class HomeFillter extends Component {
     }
 
     resetFillter = () => {
-        this.setState({province: -1, district: -1})
+        this.setState({province: -1, district: -1});
+        this.props.FillterReset();
+        this.props.getMotel();
     }
 
     componentDidMount() {
@@ -77,7 +80,17 @@ class HomeFillter extends Component {
                         <li className="breadcrumb-item">
                             <a href="#">Home</a>
                         </li>
-                        <li className="breadcrumb-item active" aria-current="page">Đà Nẵng</li>
+                        <li className="breadcrumb-item active" aria-current="page">
+                            {
+                                isEmpty(Province.selected) ? 'Đà Nẵng' : Province.selected.label
+                            }
+                        </li>
+                            {
+                                !isEmpty(District.selected) &&
+                                <li className="breadcrumb-item active" aria-current="page">
+                                    {District.selected.label}
+                                </li>
+                            }
                     </ol>
                 </nav>
 
@@ -155,7 +168,8 @@ const mapDispatchToProps = (dispatch, props) => {
         getProvinceSelected: (item) => dispatch(ProvinceAction.getProvinceSelected(item)),
         getDistrictSelected: (item) => dispatch(DistrictAction.getDistrictSelected(item)),
         fillterByProvince: (id) => dispatch(MotelAction.getMotelByProvinceRequest(id)),
-        fillterByDistrict: (province,district) => dispatch(MotelAction.getMotelByDistrictRequest(province,district))
+        fillterByDistrict: (province,district) => dispatch(MotelAction.getMotelByDistrictRequest(province,district)),
+        FillterReset: () => dispatch(MotelAction.onFillterReset())
     }
 }
 

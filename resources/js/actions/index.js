@@ -279,6 +279,12 @@ const onHoverItem = (data) => {
     }
 } 
 
+const onFillterReset = () => {
+    return {
+        type: types.FILLTER_RESET
+    }
+}
+
 const onMouseOutItem = () => {
     return {
         type: types.ON_MOUSE_OUT,
@@ -376,5 +382,6 @@ export const MotelAction = {
     resetMotelData,
     getMotelByProvinceRequest,
     getMotelByDistrictRequest,
-    getListMotelTest
+    getListMotelTest,
+    onFillterReset
 }

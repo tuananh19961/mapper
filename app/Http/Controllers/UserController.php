@@ -56,7 +56,7 @@ class UserController extends Controller
         if($validator->fails()) {
             $error = $validator->messages();
             // $error sẽ trả ra email.unique
-            
+
             return response()->json(['success'=> false, 'error'=> 'Email đã được sử dụng!'], 425);
         }
         else
@@ -116,8 +116,6 @@ class UserController extends Controller
     public function verifyUser($verification_code)
     { 
         $check = $this->user->where('remember_token','=',$verification_code)->first();
-        
-
         if(!is_null($check)){
             if($check->is_verified == 1){
                 return response()->json([

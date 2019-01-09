@@ -89,7 +89,6 @@ class Register extends Component {
             phone: this.state.phone,
             name: this.state.name
         });
-
         this.setState({
             status: true
         })
@@ -127,7 +126,8 @@ class Register extends Component {
                     <div className="text-center">
                         { (User.register_status)
                             ? <FormText><b style={{color: '#38c172'}}>{User.register_messages}</b></FormText> 
-                            : <FormText><b style={{color: 'red'}}>{User.register_messages}</b></FormText> }
+                            : <FormText><b style={{color: 'red'}}>{User.register_messages}</b></FormText> 
+                        }
                     </div>
                     }
                     <Row>

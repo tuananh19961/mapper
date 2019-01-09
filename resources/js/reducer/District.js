@@ -16,7 +16,11 @@ const District = (state = initialState, action) => {
                 ...state,
                 isRequest: true
             };
-            
+        case types.FILLTER_RESET:
+            return{
+                ...state,
+                selected: {}
+            }
         case types.GET_LIST_DISTRICT:
             if (action.payload.isSuccess) {
                 return {

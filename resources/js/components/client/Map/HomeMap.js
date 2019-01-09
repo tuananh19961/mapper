@@ -5,15 +5,7 @@ import {to_slug} from './../../../services/base-service';
 import {MotelAction} from './../../../actions/index';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import { isEmpty } from 'lodash';
-
-const icon = {
-    url: 'https://img.icons8.com/ultraviolet/1600/marker.png',
-    scaledSize: {
-        width: 35,
-        height: 35
-    }
-};
+import {isEmpty} from 'lodash';
 
 const icon2 = {
     url: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png',
@@ -26,8 +18,8 @@ const icon2 = {
 const icon3 = {
     url: 'https://cdn3.iconfinder.com/data/icons/e-commerce-pt-2/96/map_marker_mark_destination-512.png',
     scaledSize: {
-        width: 25,
-        height: 25
+        width: 35,
+        height: 35
     }
 };
 
@@ -42,8 +34,17 @@ class HomeMap extends Component {
                 lat: 16.036500,
                 lng: 108.218105
             },
-            zoom: 12
+            zoom: 12,
+            markerObjects: [],
         }
+
+        this.onMarkerMounted = element => {
+            if(element){
+                this.setState(prevState => ({
+                    markerObjects: [...prevState.markerObjects, element.marker]
+                  }))
+            }   
+        };
     }
 
     componentDidMount() {
@@ -51,59 +52,104 @@ class HomeMap extends Component {
         this
             .props
             .getMotel();
+
+        if (!isEmpty(this.state.markerObjects)){
+                const {markerObjects} = this.state;
+                markerObjects.map((item) => {
+                    item.setIcon(icon2);
+                    this.props.google.maps.event.trigger(item,'mouseout')
+                });
+        }
     }
 
     onMouseover = (props, marker, e) => {
-        marker.setIcon(icon);
+        marker.setIcon(icon3);
     }
 
     onMouseout = (props, marker, e) => {
         marker.setIcon(icon2);
     }
 
-    onSelectItem = (props, marker, e) => {
-            this.props.history.push(`/view/${props.data.id}/${to_slug(props.data.title)}.html`)
+    shouldComponentUpdate(next,state){
+        if(this.props.Motel.data === next.Motel.data){
+            return false;
+        }
+        return true;
     }
 
-    componentWillReceiveProps(next){
-        if(!isEmpty(next.Province.selected)){
-            if(!isEmpty(next.District.selected)){
+    onSelectItem = (props, marker, e) => {
+        marker.setIcon(icon3);
+        this
+            .props
+            .history
+            .push(`/view/${props.data.id}/${to_slug(props.data.title)}.html`)
+       
+    }
 
-                Geocode.fromAddress(`${next.District.selected.label} ${next.Province.selected.label}`).then(
-                    response => {
-                      const { lat, lng } = response.results[0].geometry.location;
-                      this.setState({
-                            center:{
+    componentWillReceiveProps(next) {
+        if (!isEmpty(next.Province.selected)) {
+            if (!isEmpty(next.District.selected)) {
+
+                Geocode
+                    .fromAddress(`${next.District.selected.label} ${next.Province.selected.label}`)
+                    .then(response => {
+                        const {lat, lng} = response.results[0].geometry.location;
+                        this.setState({
+                            center: {
                                 lat: lat,
                                 lng: lng
                             },
-                            zoom:15
-                      })
-                    },
-                    error => {
-                      console.error(error);
-                    }
-                );
-                    
+                            zoom: 15
+                        })
+                    }, error => {
+                        console.error(error);
+                    });
+
+            } else {
+                Geocode
+                    .fromAddress(next.Province.selected.label)
+                    .then(response => {
+                        const {lat, lng} = response.results[0].geometry.location;
+                        this.setState({
+                            center: {
+                                lat: lat,
+                                lng: lng
+                            },
+                            zoom: 14
+                        })
+                    }, error => {
+                        console.error(error);
+                    });
             }
-            else{
-                Geocode.fromAddress(next.Province.selected.label).then(
-                    response => {
-                      const { lat, lng } = response.results[0].geometry.location;
-                      this.setState({
-                            center:{
-                                lat: lat,
-                                lng: lng
-                            },
-                            zoom:14
-                      })
-                    },
-                    error => {
-                      console.error(error);
-                    }
-                );
-            }   
-        }      
+        }
+
+        if (isEmpty(next.Province.selected) && isEmpty(next.District.selected)) {
+            this.setState({
+                center: {
+                    lat: 16.036500,
+                    lng: 108.218105
+                },
+                zoom: 12
+            });
+        }
+
+        if (!isEmpty(next.Motel.item_hover) && !isEmpty(this.state.markerObjects)){
+            const {markerObjects} = this.state;
+            markerObjects.map((item) => {
+                if (next.Motel.item_hover.id === item.data.id) {
+                    item.setIcon(icon3);
+                    this.props.google.maps.event.trigger(item,'mouseover')
+                }
+            });
+        }
+
+        if (isEmpty(next.Motel.item_hover) && !isEmpty(this.state.markerObjects)){
+            const {markerObjects} = this.state;
+            markerObjects.map((item) => {
+                item.setIcon(icon2);
+                this.props.google.maps.event.trigger(item,'mouseout')
+            });
+        }
     }
 
     render() {
@@ -114,9 +160,9 @@ class HomeMap extends Component {
                 className="map"
                 id="onMap"
                 center={{
-                    lat: this.state.center.lat,
-                    lng: this.state.center.lng
-                }}
+                lat: this.state.center.lat,
+                lng: this.state.center.lng
+            }}
                 zoom={this.state.zoom}>
 
                 {/* List all location  */}
@@ -124,21 +170,23 @@ class HomeMap extends Component {
                     .data
                     .map((item, index) => {
                         return (
-                        <Marker
-                            index={index}
-                            icon={item.id === Motel.item_hover.id? icon: icon2}
-                            data={item}
-                            onMouseover={this.onMouseover}
-                            onMouseout={this.onMouseout}
-                            onClick={this.onSelectItem}
-                            title={item.title}
-                            position={{
-                            lat: item.latitude,
-                            lng: item.longitude
-                        }}
-                            key={index}/>)
+                            <Marker
+                                ref={this.onMarkerMounted}
+                                index={index}
+                                icon={icon2}
+                                data={item}
+                                onMouseover={this.onMouseover}
+                                onMouseout={this.onMouseout}
+                                onClick={this.onSelectItem}
+                                title={item.title}
+                                position={{
+                                lat: item.latitude,
+                                lng: item.longitude
+                            }}
+                                key={index} />
+                        )
                     })
-            }
+                    }
             </Map>
         );
     }
