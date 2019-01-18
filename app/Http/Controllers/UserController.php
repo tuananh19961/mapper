@@ -54,10 +54,11 @@ class UserController extends Controller
         $validator = Validator::make($credentials, $rules);
 
         if($validator->fails()) {
+
             $error = $validator->messages();
             // $error sẽ trả ra email.unique
 
-            return response()->json(['success'=> false, 'error'=> 'Email đã được sử dụng!'], 425);
+            return response()->json(['success'=> false, 'error'=> 'Email đã được sử dụng!'], 401);
         }
         else
         {

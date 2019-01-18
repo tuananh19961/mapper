@@ -70,6 +70,7 @@ class HomeMap extends Component {
         marker.setIcon(icon2);
     }
 
+
     shouldComponentUpdate(next,state){
         if(this.props.Motel.data === next.Motel.data){
             return false;
@@ -86,9 +87,25 @@ class HomeMap extends Component {
        
     }
 
+    resetMarker = () => {
+        this.setState({
+            markerObjects:[]
+        })
+    }
+
     componentWillReceiveProps(next) {
+
         if (!isEmpty(next.Province.selected)) {
+
+            if(next.Province.selected !== this.props.Province.selected){
+                this.resetMarker();
+            }
+
             if (!isEmpty(next.District.selected)) {
+
+                if(next.District.selected !== this.props.District.selected){
+                    this.resetMarker();
+                }
 
                 Geocode
                     .fromAddress(`${next.District.selected.label} ${next.Province.selected.label}`)
@@ -133,6 +150,16 @@ class HomeMap extends Component {
             });
         }
 
+        this.onMarkerMounted = element => {
+            if(element){
+                if(element.marker.visible === true){
+                    this.setState(prevState => ({
+                        markerObjects: [...prevState.markerObjects, element.marker]
+                      }))
+                }     
+            }   
+        };
+
         if (!isEmpty(next.Motel.item_hover) && !isEmpty(this.state.markerObjects)){
             const {markerObjects} = this.state;
             markerObjects.map((item) => {
@@ -150,6 +177,8 @@ class HomeMap extends Component {
                 this.props.google.maps.event.trigger(item,'mouseout')
             });
         }
+
+        
     }
 
     render() {

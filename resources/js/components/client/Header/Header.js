@@ -7,6 +7,13 @@ import {NotificationManager} from 'react-notifications';
 
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            mode: constant.VIEW_LIST
+        }
+    }
     
     componentWillMount(){
         const token = localStorage.getItem('access_token');
@@ -20,11 +27,16 @@ class Header extends Component {
         if(data){
             this.props.changeView(data);
         }  
+        this.setState({
+            mode: data
+        })
     }
 
     render() {
         const {User} = this.props;
+        const { mode } = this.state;
         const token = localStorage.getItem('access_token');
+
         return (
             <header className="header_area">
             <div className="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
@@ -33,8 +45,14 @@ class Header extends Component {
                
                     <a className="nav-brand" href="index.html"><img src="/client/img/core-img/motel.png" alt=""/></a>
                 
-                    <div className="classy-navbar-toggler">
-                        <span className="navbarToggler"><span></span><span></span><span></span></span>
+                    <div className="classy-navbar-right">
+                        {/* <span className="navbarToggler"><span></span><span></span><span></span></span> */}
+                        <div className={`app-responsive ${mode === constant.VIEW_LIST && 'active'}`}>
+                            <a href="#" onClick={() => this.onChangeView(constant.VIEW_LIST)}><img src="/client/img/core-img/lnr-list.svg" alt="" /></a>
+                        </div>
+                        <div className={`app-responsive ${mode === constant.VIEW_MAP && 'active'}`}>
+                            <a href="#" onClick={() => this.onChangeView(constant.VIEW_MAP)}><img src="/client/img/core-img/lnr-map.svg" alt="" /></a>
+                        </div>
                     </div>
                 
                     <div className="classy-menu">
@@ -55,17 +73,33 @@ class Header extends Component {
                
                 <div className="header-meta d-flex clearfix justify-content-end">
                    
-                    <div className="search-area">
+                    {/* <div className="search-area">
                         <form action="#" method="post">
                             <input type="search" name="search" id="headerSearch" placeholder="Type for search" />
                             <button type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
                         </form>
-                    </div>
-                  
+                    </div> */}
+
+                   
+
                     <div className="favourite-area">
                         <a href="#"><img src="/client/img/core-img/lnr-heart.svg" alt="" /></a>
                     </div>
-               
+
+                    {
+                            !isEmpty(User.data) &&
+                            <div className="favourite-area">
+                                <a href="#"
+                                onClick = {
+                                    (e) => {
+                                        e.preventDefault();
+                                        this.props.openCreate();
+                                    }
+                                }
+                                ><img src="/client/img/core-img/lnr-home.svg" alt="" /></a>
+                            </div>
+                    }
+
                     <div className="user-login-info">
                         {
                             isEmpty(User.data)
@@ -89,12 +123,7 @@ class Header extends Component {
                            </div>
                     }
 
-                    <div className="favourite-area app-responsive">
-                        <a href="#" onClick={() => this.onChangeView(constant.VIEW_LIST)}><img src="/client/img/core-img/lnr-list.svg" alt="" /></a>
-                    </div>
-                    <div className="favourite-area app-responsive">
-                        <a href="#" onClick={() => this.onChangeView(constant.VIEW_MAP)}><img src="/client/img/core-img/lnr-map.svg" alt="" /></a>
-                    </div>
+                    
                 </div>
     
             </div>

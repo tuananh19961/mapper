@@ -71,6 +71,11 @@ const formatPhone = (text) => {
 }
 
 // GET DATA WITH HEADER
+
+const config = {     
+    headers: { 'content-type': 'multipart/form-data' }
+}
+
 const getDataMiddleware = async (url,token) => {
     const instance = axios.create({
         baseURL: '/api/',
@@ -82,6 +87,17 @@ const getDataMiddleware = async (url,token) => {
     return result;
 }
 
+const postDataMiddleware = async (url,data) => {
+    const token = localStorage.getItem('access_token');
+    const instance = axios.create({
+        baseURL: '/api/',
+        timeout: 1000,
+        headers: {'Authorization': 'Bearer ' + token}
+      });
+
+    const result = await instance.post(url,data,config);
+    return result;
+}
 
 export {
     getTakenData,
@@ -90,5 +106,6 @@ export {
     to_slug,
     formatPhone,
     postData,
-    getDataMiddleware
+    getDataMiddleware,
+    postDataMiddleware
 };

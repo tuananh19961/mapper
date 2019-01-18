@@ -26,7 +26,7 @@ const User = (state = initialState, action) => {
                     isRequest: false,
                     isLoading: false,
                     status:true,
-                    messages: 'Load success!'
+                    messages: null
                 };
                 }
                 else

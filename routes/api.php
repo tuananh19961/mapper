@@ -33,6 +33,7 @@ Route::get('user/verify/{verification_code}', 'UserController@verifyUser');
 Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('user-info', 'UserController@getUserInfo');
     Route::get('user-logout', 'UserController@logout');
+    Route::post('user-post-motel','API\MotelController@store');
 });
 
 Auth::routes();

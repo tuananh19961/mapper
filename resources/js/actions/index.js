@@ -1,5 +1,5 @@
 import * as types from './../constants/ActionType';
-import {getTakenData , getDataByID, postData, getDataMiddleware} from './../services/base-service';
+import {getTakenData , getDataByID, postData, getDataMiddleware, postDataMiddleware} from './../services/base-service';
 import axios from 'axios';
 import {api} from './../services/middleware-service';
 import baseURL from './../constants/baseURL';
@@ -374,6 +374,36 @@ const getListMotelTest =  () => async dispatch => {
     }
 };
 
+// USER UPLOAD NEW MOTEL
+const uploadMotel = (isSuccess, data) => {
+    return {
+        type: types.USER_UPLOAD_MOTEL,
+        payload: {
+            isSuccess,
+            data
+        }
+    }
+}
+
+const uploadMotelRequest = (data) => async dispatch => {
+    dispatch(motelRequest());
+    try {
+        const url = baseURL.UPLOAD_MOTEL_API;
+        const result = await postDataMiddleware(url,data);
+        console.log(result);
+        if (result) {
+            // dispatch(uploadMotel(true, result))
+        }
+    } catch (e) {
+        const error = e.response
+            ? e.response.data
+            : {
+                message: "Network Error!"
+            };
+        // dispatch(uploadMotel(false, error))
+    }
+};
+
 export const MotelAction = {
     getMotelRequest,
     onHoverItem,
@@ -383,5 +413,6 @@ export const MotelAction = {
     getMotelByProvinceRequest,
     getMotelByDistrictRequest,
     getListMotelTest,
-    onFillterReset
+    onFillterReset,
+    uploadMotelRequest
 }
