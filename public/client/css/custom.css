@@ -102,7 +102,7 @@ html {
 }
 .home_map {
     position: fixed;
-    right: 44%;
+    right: 0;
     bottom: 0;
     left: 0;
     overflow: hidden;
@@ -131,8 +131,9 @@ html {
     padding: 5px 10px;
 }
 .breadcrumb {
-    background-color: transparent;
-    padding: 0;
+    background-color: #fff;
+    padding: 5px 5px;
+    margin-top: 10px;
 }
 
 .breadcrumb .breadcrumb-item {
@@ -214,7 +215,7 @@ html {
 .num_results span {
     vertical-align: -webkit-baseline-middle;
     margin-top: 3px;
-    color: #878698;
+    color: #fff;
     font-size: 15px;
     text-align: center;
     letter-spacing: 0.5px;
@@ -319,8 +320,6 @@ html {
     color: #2d3138;
     font-size: 12px;
     line-height: 1.5em;
-}
-.item_title a {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -663,4 +662,17 @@ ul.pagination {
 }
 .carousel .slide img{
     height: 100% !important;
+}
+
+/* Home page */
+.home_wrapper{
+    position: relative;
+}
+.fillter_wrapper{
+    position: absolute;
+    right: 0;
+    max-width: 400px;
+}
+.home_fillter{
+    background: #0000007a;
 }

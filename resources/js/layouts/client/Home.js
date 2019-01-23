@@ -14,7 +14,7 @@ class Home extends Component {
         this.state = {
             view: constant.VIEW_LIST,
             open: false,
-            open_create: true
+            open_create: false
         }
     }
 

@@ -73675,7 +73675,7 @@ var Home = function (_Component) {
         _this.state = {
             view: constant.VIEW_LIST,
             open: false,
-            open_create: true
+            open_create: false
         };
         return _this;
     }
@@ -77041,7 +77041,7 @@ var HomePage = function (_Component) {
                     { className: 'row' },
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-sm-7' },
+                        { className: 'col-sm-12' },
                         _react2.default.createElement(
                             'div',
                             { className: 'home_map' },
@@ -77050,10 +77050,10 @@ var HomePage = function (_Component) {
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'col-sm-5' },
+                        { className: 'fillter_wrapper' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'home_fillter' },
+                            { className: 'home_fillter', id: 'style-1' },
                             _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _HomeFillter2.default }),
                             _react2.default.createElement(_reactRouterDom.Route, { path: '/view/:id/:slug.html', component: _Preview2.default })
                         )
